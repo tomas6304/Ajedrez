@@ -248,6 +248,51 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green);out
 .pcg{font-family:var(--pc);font-size:20px}
 .card span.tag{display:inline-block;align-self:flex-start}
 .stats b small{font-size:12px;font-weight:800}
+
+.plancard{background:linear-gradient(180deg,#2f3a26,#272d22);border:1px solid #45753c;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ph2{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.ph2 b{font-size:15px}.ph2 span{font-size:12.5px;color:var(--muted);font-weight:700}
+.ptask{display:flex;align-items:center;gap:10px;text-align:left;padding:7px 4px;border-radius:6px;font-size:14px}
+.ptask:hover{background:rgba(255,255,255,.04)}.ptask[disabled]{cursor:default}
+.ptask i{width:20px;height:20px;border-radius:50%;border:2px solid #6b8f52;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:900;flex:none}
+.ptask.ok i{background:var(--green);border-color:var(--green);color:#fff}.ptask.ok span{color:var(--muted);text-decoration:line-through}
+.ptask span{flex:1;min-width:0}.ptask em{font-style:normal;font-size:12px;color:var(--muted);font-weight:700}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.quick button{background:var(--panel2);border-radius:8px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
+.quick button:hover{background:#2c2a27}.quick i{font-style:normal;font-size:22px;line-height:1.1}.quick b{font-size:13px}.quick span{font-size:11.5px;color:var(--muted);line-height:1.25}
+.drillhud{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.drillhud div{background:var(--panel2);border-radius:8px;padding:10px 6px;text-align:center}
+.drillhud b{display:block;font-size:24px;font-variant-numeric:tabular-nums}.drillhud span{font-size:12px;color:var(--muted)}
+.lives{color:#ff5b4a}.lives s{color:#4b4845;text-decoration:none}
+#board.nocoords .co{display:none}
+.coordq{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:15;font-size:calc(var(--bsz)/4.2);font-weight:900;color:rgba(255,255,255,.88);text-shadow:0 3px 14px rgba(0,0,0,.55);letter-spacing:-2px}
+.sq.fok::after{content:"";position:absolute;inset:0;background:rgba(129,182,76,.75)}
+.sq.fbad::after{content:"";position:absolute;inset:0;background:rgba(250,65,45,.7)}
+.sq.fok2::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 5px #81b64c;background:rgba(129,182,76,.25)}
+.rbars{display:flex;flex-direction:column;gap:8px;background:var(--panel2);border-radius:8px;padding:12px}
+.rbar{display:grid;grid-template-columns:96px 1fr 44px;gap:10px;align-items:center;font-size:13.5px}
+.rtrack{height:10px;border-radius:5px;background:#3c3a37;overflow:hidden}.rtrack div{height:100%;border-radius:5px}
+.rbar b{text-align:right;font-variant-numeric:tabular-nums}
+.rerrs{display:flex;flex-direction:column;gap:6px}
+.rerr{display:flex;align-items:center;gap:10px;background:var(--panel2);border-radius:8px;padding:9px 11px;flex-wrap:wrap}
+.rerr div{flex:1;min-width:150px}.rerr b{display:block;font-size:14px}.rerr span{font-size:12.5px;color:var(--muted)}
+.otable{display:flex;flex-direction:column;gap:4px}
+.orow{display:grid;grid-template-columns:1fr 70px 44px;gap:10px;align-items:center;background:var(--panel2);border-radius:7px;padding:8px 10px}
+.orow b{font-size:13.5px;display:block}.orow span{font-size:12px;color:var(--muted)}.orow>b{text-align:right;font-variant-numeric:tabular-nums}
+.orow .ok{color:var(--green)}.orow .no{color:#ff8a7a}
+.wdl{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:1px}.wdl i{display:block}
+.repbox{background:var(--panel2);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:9px;border:1px solid var(--line)}
+.repsel{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted);font-weight:700}
+.repsel select{background:#1b1a18;color:var(--fg);border:1px solid var(--line);border-radius:7px;padding:9px 10px;font:inherit;font-size:14px;min-width:0;width:100%}
+.vline{display:flex;flex-wrap:wrap;gap:4px;background:var(--panel2);border-radius:8px;padding:10px;line-height:1.6}
+.vm{padding:2px 7px;border-radius:5px;font-weight:700;cursor:pointer;font-size:14px}.vm:hover{background:#2c2a27}.vm.cur{background:#484644}
+.vm small{color:var(--dim);font-weight:600;margin-right:3px}
+.achs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.ach{background:var(--panel2);border-radius:8px;padding:9px 10px;display:grid;grid-template-columns:30px 1fr;column-gap:8px;opacity:.45;min-width:0}
+.ach.on{opacity:1;background:#2f3a26}
+.ach i{grid-row:span 2;width:30px;height:30px;border-radius:50%;background:#3c3a37;display:grid;place-items:center;font-style:normal;font-size:15px}
+.ach.on i{background:var(--warn);color:#262421}
+.ach b{font-size:12.5px;line-height:1.2}.ach span{font-size:11px;color:var(--muted);line-height:1.25}
+.bot.adapt{background:#1f2e2a}
 @media (max-width:1100px){
   .main{flex-direction:column;align-items:center}
   .bcol{--bsz:min(620px,calc(100vw - 148px - 96px),calc(100vh - 230px))}
@@ -286,7 +331,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green);out
     <div class="logo"><span class="mk">♞&#xFE0E;</span><span>Ajedrez<br><b>Entrenador</b></span></div>
     <button class="nav" data-go="play"><span class="ic">♟&#xFE0E;</span>Jugar</button>
     <button class="nav" data-go="openings"><span class="ic">♝&#xFE0E;</span>Aperturas</button>
-    <button class="nav" data-go="tactics"><span class="ic">♞&#xFE0E;</span>Medio juego</button>
+    <button class="nav" data-go="tactics"><span class="ic">♞&#xFE0E;</span>Entrenar</button>
     <button class="nav" data-go="endgames"><span class="ic">♚&#xFE0E;</span>Finales</button>
     <button class="nav" data-go="progress"><span class="ic">★</span>Progreso</button>
     <div class="foot">Funciona sin internet. Tu progreso queda guardado en este navegador.</div>
@@ -311,7 +356,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green);out
   <nav class="bottomnav" aria-label="Secciones">
     <button data-go="play"><span class="ic">♟&#xFE0E;</span>Jugar</button>
     <button data-go="openings"><span class="ic">♝&#xFE0E;</span>Aperturas</button>
-    <button data-go="tactics"><span class="ic">♞&#xFE0E;</span>Medio</button>
+    <button data-go="tactics"><span class="ic">♞&#xFE0E;</span>Entrenar</button>
     <button data-go="endgames"><span class="ic">♚&#xFE0E;</span>Finales</button>
     <button data-go="progress"><span class="ic">★</span>Progreso</button>
   </nav>
@@ -343,6 +388,11 @@ const ZOB = (() => {
   const ep = []; for (let i = 0; i < 8; i++) ep.push(r());
   return { pc, cr, ep, side: r() };
 })();
+// tabla de transposición compartida
+const TT_BITS = 19, TT_N = 1 << TT_BITS, TT_MASK = TT_N - 1;
+const TTK = new Uint32Array(TT_N), TTS = new Int32Array(TT_N), TTD = new Int8Array(TT_N), TTF = new Uint8Array(TT_N), TTM = new Int32Array(TT_N);
+const PRC = { q: 1, r: 2, b: 3, n: 4 };
+const mcode = m => m.f | (m.t << 6) | ((m.pr ? PRC[m.pr] : 0) << 12);
 const isW = p => p >= 'A' && p <= 'Z';
 const sqName = s => 'abcdefgh'[s & 7] + (8 - (s >> 3));
 const sqIdx = n => (8 - parseInt(n[1])) * 8 + 'abcdefgh'.indexOf(n[0]);
@@ -480,7 +530,14 @@ class Chess {
     h ^= Z.side ^ Z.cr[this.cr]; if (this.ep >= 0) h ^= Z.ep[this.ep & 7];
     this.hash = h >>> 0; this.keys.push(this.hash);
   }
+  makeNull() {
+    this.hist.push([null, this.cr, this.ep, this.half, this.hash]);
+    let h = this.hash; if (this.ep >= 0) h ^= ZOB.ep[this.ep & 7];
+    this.ep = -1; h ^= ZOB.side; this.turn = this.turn === 'w' ? 'b' : 'w';
+    this.hash = h >>> 0; this.keys.push(this.hash);
+  }
   unmake() {
+    if (!this.hist[this.hist.length - 1][0]) { const [, , ep, , hash] = this.hist.pop(); this.keys.pop(); this.turn = this.turn === 'w' ? 'b' : 'w'; this.ep = ep; this.hash = hash; return; }
     const [m, cr, ep, half, hash] = this.hist.pop(); this.keys.pop();
     const b = this.b;
     this.turn = this.turn === 'w' ? 'b' : 'w'; if (this.turn === 'b') this.full--;
@@ -599,14 +656,16 @@ class Chess {
     return 20 * cd + 8 * (14 - kd);
   }
   // ---------- búsqueda ----------
-  order(moves, ply, pvm) {
-    const k = this.killers[ply] || [];
+  order(moves, ply, pvm, ttm) {
+    const k = this.killers[ply] || [], hh = this.hh;
     for (const m of moves) {
       let sc = 0;
-      if (pvm && m.f === pvm.f && m.t === pvm.t && m.pr === pvm.pr) sc = 1e7;
+      if (ttm && mcode(m) === ttm) sc = 2e7;
+      else if (pvm && m.f === pvm.f && m.t === pvm.t && m.pr === pvm.pr) sc = 1e7;
       else if (m.c) sc = 1e6 + 10 * VAL[m.c.toUpperCase()] - VAL[m.p.toUpperCase()];
       else if (m.pr) sc = 9e5;
       else if (k.some(x => x.f === m.f && x.t === m.t)) sc = 8e5;
+      else if (hh) sc = Math.min(7e5, hh[m.f * 64 + m.t]);
       m.s = sc;
     }
     moves.sort((a, b) => b.s - a.s);
@@ -632,16 +691,39 @@ class Chess {
     }
     return alpha;
   }
-  search(depth, alpha, beta, ply) {
+  search(depth, alpha, beta, ply, noNull) {
     if ((++this.nodes & 1023) === 0 && Date.now() > this.deadline) throw 'T';
     this.pv[ply] = [];
     if (ply > 0 && (this.half >= 100 || this.repCount() >= 2 || this.insufficient())) return 0;
     const inC = this.inCheck();
     if (inC) depth++;
     if (depth <= 0) return this.qs(alpha, beta, ply);
+    const pvNode = beta - alpha > 1;
+    // tabla de transposición
+    const ti = this.hash & TT_MASK; let ttm = 0;
+    if (TTK[ti] === this.hash) {
+      ttm = TTM[ti];
+      if (ply > 0 && !pvNode && TTD[ti] >= depth) {
+        let ts = TTS[ti]; if (ts > MATE - 1000) ts -= ply; else if (ts < -MATE + 1000) ts += ply;
+        const fl = TTF[ti];
+        if (fl === 0 || (fl === 1 && ts >= beta) || (fl === 2 && ts <= alpha)) return ts;
+      }
+    }
+    // jugada nula
+    if (!noNull && !inC && !pvNode && depth >= 3 && ply > 0 && Math.abs(beta) < MATE - 1000) {
+      let np = false; const w = this.turn === 'w';
+      for (let s = 0; s < 64 && !np; s++) { const p = this.b[s]; if (p && isW(p) === w && 'NBRQnbrq'.includes(p)) np = true; }
+      if (np && this.evaluate() >= beta) {
+        this.makeNull();
+        const s = -this.search(depth - 3, -beta, -beta + 1, ply + 1, true);
+        this.unmake();
+        if (s >= beta) return s > MATE - 1000 ? beta : s;
+      }
+    }
     const pvm = this.prevPV ? this.prevPV[ply] : null;
-    const ms = this.order(this.gen(false), ply, pvm);
-    let legal = 0, best = -INF;
+    const ms = this.order(this.gen(false), ply, pvm, ttm);
+    let legal = 0, best = -INF, bestM = null; const a0 = alpha;
+    const kil = this.killers[ply] || [];
     for (const m of ms) {
       this.make(m);
       if (!this.legalAfter()) { this.unmake(); continue; }
@@ -649,27 +731,35 @@ class Chess {
       let s;
       if (legal === 1) s = -this.search(depth - 1, -beta, -alpha, ply + 1);
       else {
-        s = -this.search(depth - 1, -alpha - 1, -alpha, ply + 1);
+        let red = 0;
+        if (legal > 3 && depth >= 3 && !inC && !m.c && !m.pr && !kil.some(x => x.f === m.f && x.t === m.t) && !this.inCheck()) red = legal > 8 && depth >= 5 ? 2 : 1;
+        s = -this.search(depth - 1 - red, -alpha - 1, -alpha, ply + 1);
+        if (red && s > alpha) s = -this.search(depth - 1, -alpha - 1, -alpha, ply + 1);
         if (s > alpha && s < beta) s = -this.search(depth - 1, -beta, -alpha, ply + 1);
       }
       this.unmake();
       if (s > best) {
-        best = s;
+        best = s; bestM = m;
         if (s > alpha) {
           alpha = s; this.pv[ply] = [m, ...this.pv[ply + 1]];
           if (alpha >= beta) {
-            if (!m.c) { const k = this.killers[ply] || (this.killers[ply] = []); k.unshift(m); if (k.length > 2) k.pop(); }
+            if (!m.c) {
+              const k = this.killers[ply] || (this.killers[ply] = []); k.unshift(m); if (k.length > 2) k.pop();
+              if (this.hh) { const i = m.f * 64 + m.t; this.hh[i] += depth * depth; if (this.hh[i] > 6e5) for (let j = 0; j < 4096; j++) this.hh[j] >>= 1; }
+            }
             break;
           }
         }
       }
     }
     if (!legal) return inC ? -MATE + ply : 0;
+    let st = best; if (st > MATE - 1000) st += ply; else if (st < -MATE + 1000) st -= ply;
+    TTK[ti] = this.hash; TTS[ti] = st; TTD[ti] = depth; TTF[ti] = best >= beta ? 1 : best <= a0 ? 2 : 0; TTM[ti] = bestM ? mcode(bestM) : 0;
     return best;
   }
   // búsqueda iterativa: devuelve {move, score, pv, depth}
   think(maxDepth, timeMs) {
-    this.nodes = 0; this.killers = []; this.prevPV = null; this.pv = [];
+    this.nodes = 0; this.killers = []; this.prevPV = null; this.pv = []; this.hh = new Int32Array(4096);
     const start = Date.now(), base = this.hist.length;
     let best = null;
     for (let d = 1; d <= maxDepth; d++) {
@@ -722,6 +812,7 @@ if (typeof module !== 'undefined') module.exports = { Chess, analyse, sqName, sq
 </script>
 <script>
 const PUZZLE_BANK = [{"fen": "2n2r1r/1k4p1/qpb1p3/1p1p1p1P/3P4/2Q1P1P1/1b1NBKPR/R7 w - - 2 34", "sol": ["c3b2"], "theme": "Pieza colgada", "rating": 650, "text": "Dxb2 captura el alfil de b2, que no tenía defensa."}, {"fen": "r3r1k1/1pp1qp1p/p4bp1/2nP4/4NP2/8/PP2K1PP/1RBQ1BNR b - - 2 15", "sol": ["e7e4"], "theme": "Pieza colgada", "rating": 660, "text": "Dxe4+ captura el caballo de e4, que no tenía defensa."}, {"fen": "rr6/3bkp2/1qp1p3/p2B1p1p/Q2P4/PN5P/1P2KPP1/1R4R1 b - - 0 34", "sol": ["c6d5"], "theme": "Pieza colgada", "rating": 730, "text": "cxd5 captura el alfil de d5, que no tenía defensa."}, {"fen": "r1k1r3/1ppn2p1/p2bB1pp/8/5N1B/P1P5/1P3PPP/R3K2R b KQ - 0 20", "sol": ["d6f4"], "theme": "Pieza colgada", "rating": 730, "text": "Axf4 captura el caballo de f4, que no tenía defensa."}, {"fen": "4k1r1/2pqBpp1/p7/1p1R3p/1P4bP/PP3Pn1/4Q3/4KB1R b K - 0 23", "sol": ["d7d5"], "theme": "Pieza colgada", "rating": 755, "text": "Dxd5 captura la torre de d5, que no tenía defensa."}, {"fen": "r4bk1/p1p2pp1/1p3q1p/3pn3/2B3b1/3P1N2/PPP2PQP/R1B2RK1 b - - 1 16", "sol": ["g4f3"], "theme": "Ganar material", "rating": 900, "text": "Axf3 gana material. Seguí la línea: 16... Axf3 17. Dg3 dxc4 18. dxc4."}, {"fen": "6r1/7k/1pp3r1/p2pP1B1/P7/1P1P1P1b/2R3R1/1N3K2 b - - 4 38", "sol": ["g6g5"], "theme": "Ganar material", "rating": 910, "text": "Txg5 gana material. Seguí la línea: 38... Txg5 39. e6 Txg2 40. Txg2."}, {"fen": "r1bq1k1r/p1p2p2/n2bpp1p/3p1B2/1p1P3B/2N5/PPPQ1PPP/R1N1K2R b KQ - 1 13", "sol": ["b4c3"], "theme": "Ganar material", "rating": 915, "text": "bxc3 gana material. Seguí la línea: 13... bxc3 14. bxc3 exf5 15. Cd3."}, {"fen": "rn3r2/pp2k1pp/4p3/1p6/3PP1n1/2P5/P4PPP/R1K2BNR b - - 3 22", "sol": ["g4f2"], "theme": "Ganar material", "rating": 920, "text": "Cxf2 gana material. Seguí la línea: 22... Cxf2 23. Cf3 Cxh1 24. Axb5."}, {"fen": "2rq1r1k/pppnbp2/2b1p1p1/3N4/3P2pP/1Q3N2/PPKBPP2/3R1B1R b - - 0 15", "sol": ["c6d5"], "theme": "Ganar material", "rating": 925, "text": "Axd5 gana material. Seguí la línea: 15... Axd5 16. Da4 Ae4+ 17. Rc1."}, {"fen": "1rq5/2p2p1r/1pp1knp1/p1R5/P3P3/1P2B3/2P1K1Pp/2Q2B1R w - - 0 29", "sol": ["c5c6"], "theme": "Ganar material", "rating": 935, "text": "Txc6+ gana material. Seguí la línea: 29. Txc6+ Re7 30. Da3+ Rd8."}, {"fen": "3qk2r/r1p4p/p4pp1/1p2Pb2/2PB4/2b2B1P/P3QPP1/R2K1R2 w k - 0 21", "sol": ["e5f6"], "theme": "Ganar material", "rating": 950, "text": "exf6+ gana material. Seguí la línea: 21. exf6+ Rf8 22. De7+ Dxe7."}, {"fen": "r1b4r/1p2b1pp/2pk4/6B1/p2Pp1QP/P7/1P3PPq/2R1KBR1 w - - 4 21", "sol": ["g5f4"], "theme": "Horquilla", "rating": 965, "text": "Af4+ ataca el rey de d6 y la dama de h2 a la vez: una de las dos se pierde."}, {"fen": "r1b1kbnr/ppp2ppp/8/q2Pp3/3n4/2N5/PPP1QPPP/R1B1KBNR w KQkq - 1 7", "sol": ["e2e5"], "theme": "Horquilla", "rating": 965, "text": "Dxe5+ ataca el rey de e8 y el caballo de d4 a la vez: una de las dos se pierde."}, {"fen": "r1bqk1nr/p1pp1pp1/8/1p2b2p/4P3/7P/PPP1NPP1/R1BQKB1R w KQkq - 0 9", "sol": ["d1d5"], "theme": "Horquilla", "rating": 990, "text": "Dd5 ataca la torre de a8 y el alfil de e5 a la vez: una de las dos se pierde."}, {"fen": "rn2k1nr/pp3ppp/2pq4/4p3/2P5/1Q5P/PP1B1P1P/R3KB1R w KQkq - 2 12", "sol": ["b3b7"], "theme": "Ganar material", "rating": 995, "text": "Dxb7 gana material. Seguí la línea: 12. Dxb7 Dd4 13. Ag2 Ce7."}, {"fen": "r1bqk1nr/ppppb1pp/5p2/4p3/2BnP3/PP3N2/2PP1PPP/RNB1QRK1 b kq - 3 8", "sol": ["d4c2"], "theme": "Horquilla", "rating": 995, "text": "Cxc2 ataca la torre de a1 y la dama de e1 a la vez: una de las dos se pierde."}, {"fen": "1rbk1b1r/pp1qn1pp/1np2p2/8/2PNNPP1/4B2P/PP6/R2Q1BKR w - - 0 14", "sol": ["d4e6"], "theme": "Horquilla", "rating": 1000, "text": "Ce6+ ataca el rey de d8 y el alfil de f8 a la vez: una de las dos se pierde."}, {"fen": "r1bqrk2/ppp2ppp/4pn2/b1Pp4/1n1P4/P1NQP1P1/4KP1P/1RB2BNR w - - 0 14", "sol": ["a3b4"], "theme": "Ganar material", "rating": 1000, "text": "axb4 gana material. Seguí la línea: 14. axb4 Axb4 15. Txb4 a5."}, {"fen": "r3r1k1/pp2bppn/2p5/3p2Pp/3QPq1P/N6R/PPPP4/R1B3K1 b - - 1 17", "sol": ["f4g4"], "theme": "Horquilla", "rating": 1000, "text": "Dg4+ ataca la torre de h3 y el rey de g1 a la vez: una de las dos se pierde."}, {"fen": "r1bqkb1r/pp2p3/2np2pp/5p1Q/2BNnP2/8/PPP3PP/RNB2K1R w kq - 0 10", "sol": ["h5g6"], "theme": "Ganar material", "rating": 1030, "text": "Dxg6+ gana material. Seguí la línea: 10. Dxg6+ Rd7 11. Dxf5+ Rc7."}, {"fen": "r1b1kbnr/pp2pppp/1q1p4/2p5/1n2P1P1/5N1B/PPPPQP1P/RNB2RK1 b kq - 5 6", "sol": ["b4c2"], "theme": "Ganar material", "rating": 1035, "text": "Cxc2 gana material. Seguí la línea: 6... Cxc2 7. Cc3 Cxa1 8. Cd5."}, {"fen": "rnbq1rk1/pppp2bp/6p1/2P1pp2/3P2n1/2N4Q/PP1KPPPP/R1B2BNR b - - 1 8", "sol": ["g4f2"], "theme": "Horquilla", "rating": 1040, "text": "Cxf2 ataca la dama de h3 y la torre de h1 a la vez: una de las dos se pierde."}, {"fen": "1r1qkb1r/p1p2ppp/bpn5/4p3/Pn2P3/2NP1NP1/1P2KPBP/R1BQ3R b k - 0 10", "sol": ["a6d3"], "theme": "Ganar material", "rating": 1045, "text": "Axd3+ gana material. Seguí la línea: 10... Axd3+ 11. Re1 Cc2+ 12. Rd2."}, {"fen": "rnb1k2r/ppppq2p/5pp1/b3N2Q/2BPn3/2P1B3/PP3PPP/RN2K2R w KQkq - 0 9", "sol": ["e5g6"], "theme": "Horquilla", "rating": 1060, "text": "Cxg6 ataca la torre de h8 y la dama de e7 a la vez: una de las dos se pierde."}, {"fen": "3k4/1pp2p2/p6p/2b2r2/P7/1P1P1q2/R2Q1N2/1R2K3 b - - 3 38", "sol": ["c5f2"], "theme": "Ganar material", "rating": 1065, "text": "Axf2+ gana material. Seguí la línea: 38... Axf2+ 39. Dxf2 Dh1+ 40. Re2."}, {"fen": "2bqrb2/rppk1pp1/8/3BQN1p/1P6/5N2/2PP1PPP/1R2K1R1 w - - 1 20", "sol": ["d5f7"], "theme": "Ganar material", "rating": 1065, "text": "Axf7 gana material. Seguí la línea: 20. Axf7 Ta2 21. Axe8+ Dxe8."}, {"fen": "1rb2rk1/1pppRp1p/p7/8/2P3p1/P7/P1Q3P1/RNK1Bq2 b - - 3 26", "sol": ["f1f6"], "theme": "Horquilla", "rating": 1075, "text": "Df6 ataca la torre de e7 y la torre de a1 a la vez: una de las dos se pierde."}, {"fen": "2b1kbnr/1p4pp/4ppn1/3p4/3B4/5BK1/PPP2PPP/R4R2 b k - 1 18", "sol": ["f8d6"], "theme": "Jaque ganador", "rating": 1100, "text": "Ad6+ da jaque y gana material: 18... Ad6+ 19. Rh3 Cf4+ 20. Rh4."}, {"fen": "2b3k1/5q2/p1p1p1np/3pp1P1/P5p1/1P4P1/3QKP2/1R3R2 b - - 0 33", "sol": ["f7f3"], "theme": "Jaque ganador", "rating": 1105, "text": "Df3+ da jaque y gana material: 33... Df3+ 34. Re1 De4+ 35. Rd1."}, {"fen": "rnb1kbr1/pp2pp1p/5np1/2q5/8/N4N2/PP1KPPPP/R1BQ1B1R b q - 1 9", "sol": ["f6e4"], "theme": "Jaque ganador", "rating": 1105, "text": "Ce4+ da jaque y gana material: 9... Ce4+ 10. Rd3 Cxf2+ 11. Rd2."}, {"fen": "1rbqkb1r/pppp1pp1/5n2/4nNBp/4P3/4K1P1/PPP1NP1P/R2Q1B1R b k - 8 11", "sol": ["f6g4"], "theme": "Jaque ganador", "rating": 1115, "text": "Cfg4+ da jaque y gana material: 11... Cfg4+ 12. Rf4 Cg6+ 13. Rf3."}, {"fen": "r1bq3r/1ppp2pp/p1n3k1/3Qp1N1/4P3/b7/PPP1KPPP/R1B4R w - - 0 11", "sol": ["d5f7"], "theme": "Jaque ganador", "rating": 1115, "text": "Df7+ da jaque y gana material: 11. Df7+ Rh6 12. Ce6+ g5."}, {"fen": "4k1r1/3nppb1/2N4p/5p2/1p3P2/6PP/r1P1B3/3KR1R1 b - - 0 28", "sol": ["a2a1"], "theme": "Jaque ganador", "rating": 1140, "text": "Ta1+ da jaque y gana material: 28... Ta1+ 29. Rd2 Ac3+ 30. Re3."}, {"fen": "4kb1r/p1r2p1p/2p1p3/6B1/1pQP4/3B1K2/PP3Pnq/1R3R2 b k - 0 22", "sol": ["h2h3"], "theme": "Jaque ganador", "rating": 1160, "text": "Dh3+ da jaque y gana material: 22... Dh3+ 23. Re2 Dg4+ 24. f3."}, {"fen": "r3kb2/pb1n1N2/8/1PpP1Q2/2p3p1/8/1P2PPP1/R3KB1q w - - 1 21", "sol": ["f5e6"], "theme": "Jaque ganador", "rating": 1180, "text": "De6+ da jaque y gana material: 21. De6+ Ae7 22. Cd6+ Rd8."}, {"fen": "rnNq2kr/1p1p1ppp/4pn2/p7/3p4/Q7/PP2PPPP/1R2KBNR w K - 1 13", "sol": ["c8e7"], "theme": "Jaque ganador", "rating": 1185, "text": "Ce7+ da jaque y gana material: 13. Ce7+ Dxe7 14. Dxe7 Cc6."}, {"fen": "2b4r/2R5/1p1pkbpp/3Np3/2P1K2P/1N3P2/6P1/8 w - - 1 31", "sol": ["b3d4", "*", "d5f4"], "theme": "Mate en 2", "rating": 1190, "text": "31. Cd4+ exd4 32. Cf4#: mate en dos jugadas."}, {"fen": "r2kr3/p4pp1/1p5p/2pp4/Q5R1/2P4P/PP4K1/RNB1q3 b - - 5 24", "sol": ["e8e2", "*", "e1f2"], "theme": "Mate en 2", "rating": 1205, "text": "24... Te2+ 25. Rf3 Df2#: mate en dos jugadas."}, {"fen": "rnbq1b1r/2pk1ppp/pp6/2np4/8/3P1N1P/PPPNQPP1/1RB1KB1R w K - 2 10", "sol": ["f3e5"], "theme": "Jaque ganador", "rating": 1210, "text": "Ce5+ da jaque y gana material: 10. Ce5+ Re8 11. Cc6+ Ae6."}, {"fen": "5k2/7p/p1p5/1pN1p1pP/2B1p3/2P1P3/P2r3r/1RK1R3 b - - 4 35", "sol": ["d2c2", "*", "h2d2"], "theme": "Mate en 2", "rating": 1215, "text": "35... Tc2+ 36. Rd1 Thd2#: mate en dos jugadas."}, {"fen": "1rb1kb1r/ppp2p1p/1n3p2/7P/4Nq2/5P2/PPP1Q1P1/R3KBNR w KQk - 2 13", "sol": ["e4f6", "*", "e2e8"], "theme": "Mate en 2", "rating": 1215, "text": "13. Cxf6+ Rd8 14. De8#: mate en dos jugadas."}, {"fen": "2b1q1k1/r1p2p2/p1n5/1p1Q3p/N1Pp4/BP4P1/P2P1P2/6KR w - - 1 27", "sol": ["d5g5", "*", "h1h5"], "theme": "Mate en 2", "rating": 1230, "text": "27. Dg5+ Rh7 28. Txh5#: mate en dos jugadas."}, {"fen": "rnbB1kr1/p1Np4/1p4q1/4p3/1PPbP1Pp/5N2/P4PKP/1R1Q1R2 b - - 2 21", "sol": ["g6g4", "*", "g4g2"], "theme": "Mate en 2", "rating": 1235, "text": "21... Dxg4+ 22. Rh1 Dg2#: mate en dos jugadas."}, {"fen": "r1bq1b1r/1ppp1ppp/p2k2n1/4p3/2PnP3/1PNP4/P2K1PPP/R1BQNB1R b - - 4 9", "sol": ["d8g5", "*", "g5f4"], "theme": "Mate en 2", "rating": 1235, "text": "9... Dg5+ 10. f4 Dxf4#: mate en dos jugadas."}, {"fen": "r1bqk3/pp3prp/4p3/4Q3/6p1/PPp3N1/2K3PP/R4B1R b - - 0 22", "sol": ["d8d2", "*", "d2b2"], "theme": "Mate en 2", "rating": 1240, "text": "22... Dd2+ 23. Rb1 Db2#: mate en dos jugadas."}, {"fen": "r5r1/ppp2ppp/1bn2n2/6N1/4pkPP/5P2/1PBP2K1/RNB2R2 w - - 0 19", "sol": ["d2d4", "*", "g5h3"], "theme": "Mate en 2", "rating": 1255, "text": "19. d4+ e3 20. Ch3#: mate en dos jugadas."}, {"fen": "Q7/ppp2k1p/6p1/2p1bp2/4P3/1PP1B2P/PK2bPP1/1R2q3 b - - 0 22", "sol": ["e1c3", "*", "c3b4"], "theme": "Mate en 2", "rating": 1270, "text": "22... Dxc3+ 23. Ra3 Db4#: mate en dos jugadas."}, {"fen": "r1b1k2r/1p2p1bp/1n3q1n/pN3p2/2B3p1/2PQ2PP/PP3P1R/R1B3K1 w - - 1 25", "sol": ["b5c7", "*", "d3d8"], "theme": "Mate en 2", "rating": 1275, "text": "25. Cc7+ Rf8 26. Dd8#: mate en dos jugadas."}, {"fen": "rnbq3r/pppnbppp/5k2/4p3/1PB1P3/4Q3/PBPP1PPP/RN2K1R1 w Q - 5 11", "sol": ["e3f4", "*", "c4f7"], "theme": "Mate en 2", "rating": 1275, "text": "11. Df4+ Rg6 12. Axf7#: mate en dos jugadas."}, {"fen": "r1b1k1r1/pp1p1pp1/1qn2n2/2b1p2p/4PP2/1PN3PP/P1P1N3/1RBQKB1R b Kq f3 0 11", "sol": ["c5f2", "*", "b6e3"], "theme": "Mate en 2", "rating": 1280, "text": "11... Af2+ 12. Rd2 De3#: mate en dos jugadas."}, {"fen": "7k/5p2/3Q4/8/1R3Bb1/5P1q/2P1K2P/6r1 b - - 0 34", "sol": ["h3f3", "*", "g1d1"], "theme": "Mate en 2", "rating": 1280, "text": "34... Dxf3+ 35. Rd2 Td1#: mate en dos jugadas."}, {"fen": "rqk2b1r/4p2p/2Bpn2n/p5pQ/2N2p2/7P/PP1P2P1/R1B1K1R1 w Q a6 0 23", "sol": ["h5e8", "*", "e8d7"], "theme": "Mate en 2", "rating": 1310, "text": "23. De8+ Rc7 24. Dd7#: mate en dos jugadas."}, {"fen": "4kbr1/p3pppp/2r5/2n1B1N1/6P1/5P2/b1P2K1P/3R1B1R w - - 0 25", "sol": ["f1b5"], "theme": "Jugada tranquila", "rating": 1345, "text": "Ab5 crea una amenaza que no se puede parar: 25. Ab5 e6 26. Axc6+ Re7."}, {"fen": "1rbn1r1k/p1pqbppp/4p3/Qp6/3P4/2N1PNPP/PP2P3/R3KB1R b K - 0 17", "sol": ["d8c6"], "theme": "Jugada tranquila", "rating": 1365, "text": "Cc6 crea una amenaza que no se puede parar: 17... Cc6 18. Ce5 Cxa5 19. Cxd7."}, {"fen": "1rbk2r1/p1ppq1P1/np6/3P3R/2n1p3/P1Q3P1/1PP1KP2/R1BN4 w - - 1 24", "sol": ["c1g5"], "theme": "Jugada tranquila", "rating": 1370, "text": "Ag5 crea una amenaza que no se puede parar: 24. Ag5 Cd6 25. Axe7+ Rxe7."}, {"fen": "4kb1r/4pp2/Pr3npp/5b2/8/P2B3P/3B1PP1/R1R3K1 w k - 3 25", "sol": ["a6a7"], "theme": "Jugada tranquila", "rating": 1370, "text": "a7 crea una amenaza que no se puede parar: 25. a7 Ta6 26. Axa6 Ae4."}, {"fen": "rn3b1r/pp3ppp/1k1p1n2/1N2p2q/2Q1P3/5PP1/PPPN3P/R1B1K2R w KQ - 3 13", "sol": ["b5c7"], "theme": "Jugada tranquila", "rating": 1370, "text": "Cc7 crea una amenaza que no se puede parar: 13. Cc7 a6 14. Cxa8+ Ra7."}, {"fen": "rn3r2/pp1b1ppk/4p2p/2p1Nq2/2BP4/8/PPP2PPP/R2QK1R1 w Q - 6 14", "sol": ["c4d3"], "theme": "Jugada tranquila", "rating": 1375, "text": "Ad3 crea una amenaza que no se puede parar: 14. Ad3 cxd4 15. Axf5+ exf5."}, {"fen": "r1b1kb1r/ppp1qpp1/2p2n2/7p/2B5/5Q2/PPPP1PPP/RNBK1R2 b kq - 3 9", "sol": ["c8g4"], "theme": "Jugada tranquila", "rating": 1375, "text": "Ag4 crea una amenaza que no se puede parar: 9... Ag4 10. Te1 Ce4 11. Txe4."}, {"fen": "7r/p4ppp/1kp5/3p2P1/7P/3B1PK1/Pq2N3/3R3R w - - 2 33", "sol": ["d1b1"], "theme": "Jugada tranquila", "rating": 1395, "text": "Tb1 crea una amenaza que no se puede parar: 33. Tb1 Dxb1 34. Txb1+ Rc7."}, {"fen": "r2qk2r/p1pbbpp1/1pn1pn1p/1Q1p4/2PP1B2/2NR4/PP2PPPP/4KBNR b Kkq - 1 9", "sol": ["c6b4"], "theme": "Jugada tranquila", "rating": 1395, "text": "Cb4 crea una amenaza que no se puede parar: 9... Cb4 10. Td1 Axb5 11. Cxb5."}, {"fen": "r1b1k2r/ppp1bp1p/n1q1p1p1/8/2PPn1P1/5N1P/PP1P1P2/RNB1QRKB w kq - 1 14", "sol": ["f3e5"], "theme": "Jugada tranquila", "rating": 1410, "text": "Ce5 crea una amenaza que no se puede parar: 14. Ce5 Db6 15. Dxe4 f5."}, {"fen": "r1b1k1r1/2p1ppbp/1pq2n2/p2p2B1/1n1P4/N2BP1P1/PPP2P1P/RQ2K1NR w q - 0 13", "sol": ["d3b5"], "theme": "Jugada tranquila", "rating": 1420, "text": "Ab5 crea una amenaza que no se puede parar: 13. Ab5 Ce4 14. Axc6+ Cxc6."}, {"fen": "3k2r1/qp2pRb1/p6p/2pP3p/2P1P2P/3K3B/PP1B4/7R w - - 2 35", "sol": ["h1g1"], "theme": "Jugada tranquila", "rating": 1430, "text": "Tg1 crea una amenaza que no se puede parar: 35. Tg1 Db6 36. b3 e6."}, {"fen": "rn1qkb1r/1p1b3p/2p1pnp1/p4p2/3P1P1P/2Q1B1N1/PPP3P1/R3KBNR b KQkq - 1 10", "sol": ["f8b4"], "theme": "Jugada tranquila", "rating": 1430, "text": "Ab4 crea una amenaza que no se puede parar: 10... Ab4 11. Dxb4 axb4 12. Cf3."}, {"fen": "rnb2b1r/1pp1pppp/p2k1n2/3Pq3/2P5/7P/PP2NPP1/RNBQKB1R w Q - 3 12", "sol": ["c1f4"], "theme": "Jugada tranquila", "rating": 1430, "text": "Af4 crea una amenaza que no se puede parar: 12. Af4 Dxf4 13. Cxf4 Cbd7."}, {"fen": "qr3br1/4kpp1/4bn1p/ppp1p3/4P2P/5Q1N/PPPNKPP1/R4B1R b - - 3 22", "sol": ["e6g4"], "theme": "Jugada tranquila", "rating": 1430, "text": "Ag4 crea una amenaza que no se puede parar: 22... Ag4 23. Cg1 Dc6 24. Td1."}, {"fen": "r1b1k2r/pp1p2pp/2n5/3q1pB1/5Q2/b5K1/PPP2PPP/2RN1B1R b kq - 4 16", "sol": ["a3d6"], "theme": "Jugada tranquila", "rating": 1440, "text": "Ad6 crea una amenaza que no se puede parar: 16... Ad6 17. Cc3 Axf4+ 18. Axf4."}, {"fen": "4q1k1/1p3r1p/5pp1/3P1b2/P6P/3pQN2/1P3PP1/4K2R b - - 3 30", "sol": ["f7e7"], "theme": "Jugada tranquila", "rating": 1440, "text": "Te7 crea una amenaza que no se puede parar: 30... Te7 31. Rd2 Txe3 32. fxe3."}, {"fen": "r3kbnr/pp1qp2p/5p2/3pP3/3PP1bp/Np6/P1P3PP/RQB1KB1R w KQkq - 0 12", "sol": ["f1b5"], "theme": "Jugada tranquila", "rating": 1440, "text": "Ab5 crea una amenaza que no se puede parar: 12. Ab5 Dxb5 13. Cxb5 bxa2."}];
+const HANG_BANK = [{"fen": "r1bqkb1r/ppp2ppp/2n2n2/3pP3/4P3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 0 5", "sq": [21]}, {"fen": "r1bqkb1r/pppp1ppp/8/1B2n3/4n3/5Q2/PPPP1PPP/RNB1K2R w KQkq - 0 6", "sq": [45, 36]}, {"fen": "1k6/1p1r2pp/p1p2n2/4bb1n/4p3/1BN1B3/PPPQ1PP1/3R3K w - - 4 23", "sq": [51]}, {"fen": "r1b1kb1r/pp2pppp/1qnp1n2/1B6/3NP3/8/PPPN1PPP/R1BQK2R w KQkq - 5 7", "sq": [35]}, {"fen": "r2qkb1r/ppp2p1p/5pp1/3P4/1nPQ2b1/5N2/PP2PPPP/R1B1KB1R b KQkq - 2 8", "sq": [38]}, {"fen": "r1bqkb1r/pppn1ppp/8/3n4/3p4/6P1/PPPPPPBP/R1BQK2R w KQkq - 0 7", "sq": [27]}, {"fen": "1r1q1b1r/ppp1kppp/2np1n2/1B6/2N1P1b1/2NP4/PPP2PPP/R1BQK2R w KQ - 3 8", "sq": [59]}, {"fen": "r1bqkb1r/p2n1ppp/2p1pn2/8/1ppPPB2/2N2N2/PPQ2PPP/2KR1B1R w kq - 0 9", "sq": [42]}, {"fen": "r1bqk2r/ppp2ppp/2nbpn2/8/3Pp3/2NQBN2/PPP2PPP/R3KB1R w KQkq - 0 7", "sq": [43, 45]}, {"fen": "rn3b1r/pppkpppp/2q1bn2/1B6/3P4/2N2Q2/PPP2PPP/R1B1K1NR w KQ - 3 7", "sq": [18]}, {"fen": "r1b1kb1r/ppppqppp/5n2/4N3/4P3/2N5/PPP2PPP/R1BQKB1R b KQkq - 0 6", "sq": [28]}, {"fen": "r3kb1r/ppp1pppp/4bn2/4N3/1n1q1B2/2N5/PPP1QPPP/1R2KB1R w Kkq - 0 10", "sq": [37]}, {"fen": "r1b1kb1r/pp1n1ppp/1qp1pn2/2Pp4/3P4/3BPN2/PP1N1PPP/R1BQK2R b KQkq - 0 7", "sq": [17]}, {"fen": "r2q1kr1/ppp2ppB/3p1b2/3b4/3n4/4RP2/PPP3PP/R1BQ2K1 b - - 0 16", "sq": [6]}, {"fen": "r1bq1rk1/pppp1ppp/3b1n2/4P3/2P5/2N1B3/PP2PPPP/R2QKB1R b KQ - 0 7", "sq": [19, 21]}, {"fen": "r1bqk2r/1pp2ppp/p1p5/4p3/4n3/b2P1N2/PPP2PPP/R1BQK2R w KQkq - 0 8", "sq": [40, 36]}, {"fen": "r1bqk1r1/pppp1ppp/2N2n2/8/1bP5/2N5/PP2PPPP/R1BQKB1R w KQq - 1 7", "sq": [18, 3, 33]}, {"fen": "r2qkb1r/ppp2ppp/3pbn2/4N3/4P3/2N2Q2/PPPP1PPP/R1B1KB1R b KQkq - 0 7", "sq": [28]}, {"fen": "r1bkr3/ppp1bppp/2n1P3/3n4/8/P1N1QN1P/2P1BPP1/R1B1R1K1 b - - 0 19", "sq": [44, 27]}, {"fen": "1rbq1rk1/pppp1ppp/2n2n2/4P3/1b2P3/2N2N2/PPP1BPPP/R1BQ1RK1 w - - 1 8", "sq": [21]}, {"fen": "r1bqk2r/p1p2ppp/2p2n2/3p2B1/1b2P3/2P5/PP3PPP/RN1QKB1R b KQkq - 0 8", "sq": [33]}, {"fen": "r1bqk2r/pppp1ppp/n3p3/8/1bPPn3/2N1PN2/PP1B1PPP/R2QKB1R b KQkq - 2 6", "sq": [51, 36]}, {"fen": "r1bqkb1r/1pp1nppp/p2P4/8/4PB2/2NB4/PPP2PPP/R2QK2R b KQkq - 0 9", "sq": [12]}, {"fen": "r2qkb1r/ppp2ppp/2n1bn2/3P4/3P4/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 7", "sq": [20, 18]}, {"fen": "r1bqkb1r/ppp1pp1p/2n2np1/3P4/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 0 5", "sq": [18]}, {"fen": "r1b2rk1/ppqn1ppp/5n2/4p3/2BNp3/P6P/1PPQ1PP1/R1B1R1K1 w - - 1 14", "sq": [34, 35]}, {"fen": "r3r1k1/pppq1ppp/3b1n2/3pn3/3PP3/P1B3P1/1PP1NPK1/R2QR3 b - - 0 16", "sq": [28]}, {"fen": "r1bqk2r/1pp2ppp/p1p5/2b1p3/3N4/8/PPPPR1PP/RNBQ2K1 b kq - 3 9", "sq": [35]}, {"fen": "r1b1rk2/ppp2ppB/8/2n5/2Pq4/4n3/PP2QPPP/R3K2R w KQ - 0 18", "sq": [44]}, {"fen": "r1b2kr1/pppq1p1p/3p1bp1/3Pp3/2PnP3/1Q1BBN2/PP3PPP/R4RK1 w - - 3 13", "sq": [41]}, {"fen": "r2qk2r/pppnbppp/8/3p1b2/8/2nB1N2/PPPP1PPP/R1BQR1K1 b kq - 1 10", "sq": [59, 29, 42]}, {"fen": "r1bqk1r1/pppp1ppp/3b1n2/4p3/3NP3/2NQB3/PPP2PPP/R3KB1R b KQq - 0 7", "sq": [35]}, {"fen": "r1bqk2r/pppp1ppp/5n2/4n3/3PP3/b7/PPP1QPPP/R1B1KB1R b KQkq - 1 6", "sq": [40, 28]}, {"fen": "r1b1qk1r/pppp1ppp/2nb1n2/3Bp3/3PP3/2N2N2/PPP2PPP/R1BQ1K1R b - - 2 7", "sq": [27]}, {"fen": "r1bQ1nkr/pp3ppp/3b1n2/4p3/3NP3/1BN1B3/Pq3PPP/2R2RK1 w - - 2 16", "sq": [35, 19]}, {"fen": "r1bq1rk1/ppp2ppp/2nb1n2/3Pp3/3P4/P1N2P2/1PPBN1PP/R2QKB1R b KQ - 0 8", "sq": [18]}, {"fen": "r1b3kr/pp1nqppp/2pb1n2/4p3/3P1N2/4BNP1/PPP1BP1P/R2Q1RK1 b - - 0 12", "sq": [37]}, {"fen": "rn1qkb1r/pp1b1ppp/2p2p2/6B1/3P4/8/PPP2PPP/R2QKBNR w KQkq - 0 7", "sq": [30]}, {"fen": "2kr2r1/pppbbppp/2q1pn2/8/1nBPPB2/P1N5/1P1N1PPP/R2Q2KR b - - 4 13", "sq": [33]}, {"fen": "3rk1r1/pQpbqpbp/5p2/8/2BnN3/7P/PPP2PP1/2KR3R b - - 0 14", "sq": [35]}, {"fen": "r1bq1rk1/pppp1ppp/2nb1n2/3NP3/2P5/5N2/PP2PPPP/R1BQKB1R b KQ - 0 6", "sq": [19, 21]}, {"fen": "r1b1kr2/pppN1ppp/3b4/1B3q2/3PpB2/8/PPPQ1PPP/4RRK1 b q - 0 13", "sq": [25, 5]}, {"fen": "r1bqk2r/ppp2ppp/2n2n2/2b1p1B1/3pP3/P1NP1N2/1PP2PPP/R2QKB1R w KQkq - 0 7", "sq": [42]}, {"fen": "r2qkb1r/pp1npppp/2p1b3/2Ppn3/3P4/4P3/PP1N1PPP/R1BQKB1R w KQkq - 1 8", "sq": [28]}, {"fen": "3kr3/pppq1ppp/2n1b3/3pN3/Pb1P1B2/8/1PP1KPPP/R2Q1B1R b - - 1 15", "sq": [11]}, {"fen": "r1bq1rk1/1ppp1ppp/p1nb4/3np3/2B1P3/3P1N2/PPP2PPP/R1BQ2KR w - - 0 10", "sq": [27]}, {"fen": "r1b2kr1/1pp1qppB/1n1b4/p2p4/3Pn3/2N1PN2/PPQB1PPP/1K1R3R w - - 1 15", "sq": [51, 6]}, {"fen": "7r/p1k2ppp/5nb1/2p1p3/4p3/1BN1K2P/PPP2PP1/3rR3 w - - 0 20", "sq": [60, 59]}, {"fen": "rn1qkb1r/ppp2ppp/4bn2/3Pp3/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 0 5", "sq": [20]}, {"fen": "r1bq1k1r/ppp2ppp/2n1pn2/3P4/1b1P4/2N1PN2/PPQ2PPP/R1B1KB1R b KQ - 0 7", "sq": [18]}, {"fen": "r1bq1rk1/pppp1ppp/3b1n2/8/3nP3/2N2P2/PPP1B1PP/R1BQK2R w KQ - 0 8", "sq": [52, 35]}, {"fen": "r1bqk2r/p1pp1pp1/2p2n1p/6B1/1b2P3/2P5/PP3PPP/RN1QKB1R w KQkq - 0 8", "sq": [30, 33]}, {"fen": "rk2r3/1pqn1ppp/p1pb1n2/4pb2/3PpN1P/1QN1B1P1/PPP1BP2/3RR1K1 w - - 0 18", "sq": [37]}, {"fen": "r1b1k2r/pppq1ppp/2nBp3/3p4/3Pn3/4PN2/PPP2PPP/R2QKB1R w KQkq - 0 8", "sq": [19]}, {"fen": "r1bq1rk1/ppppbppp/5n2/8/3nP3/1BN5/PPP2PPP/R1BQK2R w KQ - 0 8", "sq": [41, 35]}, {"fen": "r2qk2r/pp3ppp/2nb1n2/2pp1b2/3P1B2/P1N2N2/1P2PPPP/R2QKB1R w KQkq - 1 9", "sq": [37]}, {"fen": "r1b1k2r/pppq1ppp/3bp3/3p4/1n1Pn3/2N2NP1/PPPB1PBP/2R1QRK1 w k - 0 12", "sq": [51]}, {"fen": "6k1/p1p2ppp/4pq2/P2b2R1/2pP1P2/1rP4P/1rPQ1P2/4R1K1 b - - 4 26", "sq": [41]}, {"fen": "2r3kr/p1q2ppp/2p1bn2/3pp3/4P2P/2bBRQ2/PPPB1PP1/3R2K1 w - - 0 17", "sq": [42]}, {"fen": "r1bN1rk1/pppp1ppp/5n2/4b3/4P3/2N1B3/PPP2PPP/R2QKB1R b KQ - 0 8", "sq": [3]}, {"fen": "r1bqk2r/p1pp1ppp/2p5/8/1bB1n3/8/PPPN1PPP/R1BQ1RK1 b kq - 3 8", "sq": [36]}, {"fen": "r1b1r1k1/1pppqpp1/2Nb4/p6p/4n3/PBN1B3/1PP1QPPP/3RR1K1 b - - 0 16", "sq": [18, 12]}, {"fen": "1rbkqb1r/2pn1pp1/3p4/pp1N3p/2BPPB2/5Q2/PPP2PPP/R4RK1 w - b6 0 14", "sq": [34]}, {"fen": "rn2k2r/pp3ppp/2pq1n2/2b1Nb2/6P1/1QNpP3/PP1B1P1P/R3KB1R b KQkq g3 0 11", "sq": [28, 29]}, {"fen": "1r1q1rk1/ppp1bppp/2npBn2/4p3/3PP3/2N2N2/PPPQ1PPP/R1B2RK1 b - - 0 9", "sq": [20]}, {"fen": "5rk1/ppp1qppp/2n1bn2/2P5/1P2B3/2P1BN2/P4PPP/3Q2KR b - - 0 18", "sq": [36]}, {"fen": "r1bq1rk1/pp1n1ppp/3bp3/3p4/3PN3/3B4/PP1N1PPP/R1BQ1RK1 b - - 0 10", "sq": [36, 19]}, {"fen": "r1bqk2r/ppp2ppp/2nbpn2/8/2pP1B2/2N2N2/PP2PPPP/R2QKB1R w KQkq - 4 7", "sq": [37]}, {"fen": "r1bqk2r/ppp1bppp/3p1n2/4p3/3NP3/2N5/PPPQ1PPP/R1B1KB1R b KQkq - 0 7", "sq": [35]}, {"fen": "r1bq1rk1/ppppppb1/6pB/3P3n/QnP5/2N2N2/PP2PPPP/R3KB1R b KQ - 0 9", "sq": [23, 33]}, {"fen": "1rb1r1k1/ppp2ppp/2npq3/2bnN1B1/2P1P3/PQ1P4/1P3PPP/1R2KB1R b K - 0 12", "sq": [28, 27]}, {"fen": "r1bq1rk1/ppp2ppp/2n2B2/2bp4/3pP3/1QP2N2/PP2BPPP/RN2K2R b KQ - 0 9", "sq": [21, 3]}, {"fen": "r1bqr1k1/ppp1bppp/2n1pn2/3P2B1/3P4/2NBPN2/PP3PPP/R2QK2R b KQ - 0 8", "sq": [18]}, {"fen": "r1bqk2r/ppp2ppp/2n2n2/3P4/1b2P3/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 7", "sq": [18]}, {"fen": "r1b1kbnr/pp2pppp/2nq4/8/3pN3/3B1N2/PPP2PPP/R1BQK2R b KQkq - 1 7", "sq": [19]}, {"fen": "r3k2r/ppP2ppp/3nb3/3p4/1n1N4/3B1N1P/P1P3P1/R2K3R b kq - 5 16", "sq": [43, 20]}, {"fen": "r1bqk2r/ppp2ppp/2n1pn2/3P4/1b1P4/2N5/PP1NPPPP/R1BQKB1R b KQkq - 0 6", "sq": [18]}, {"fen": "r1bq1rk1/ppp2ppp/2n1p3/3P4/1b1Pn3/2N1PN2/PP1Q1PPP/R1B1KB1R w KQ - 1 8", "sq": [51, 18, 36]}, {"fen": "3rkb1r/ppp1qppp/2n1b3/3p4/3PN3/4QN2/PPP2PPP/R1B1KB1R w KQk - 1 10", "sq": [36]}, {"fen": "3rk2r/pqp2ppp/2pbpn2/5b2/2NP4/8/PPP1NPPP/R1BQ2KR w k - 6 13", "sq": [19]}, {"fen": "1r1q1rk1/pppb1p1p/2np4/2b1N3/2B1p3/2BP3P/PPP2PP1/1R1Q1RK1 b - - 0 14", "sq": [28, 11]}, {"fen": "r1b1kb1r/ppp2ppp/2n2n2/1N1p4/1q1p4/5NPP/PPP1PPB1/R1BQ1K1R b kq - 3 8", "sq": [25]}, {"fen": "r3kb1r/ppp1nppp/1q6/1b2B3/3N4/2N5/PPP2PPP/R2Q1RK1 w kq - 0 12", "sq": [61, 25]}, {"fen": "r1bqk2r/pppp1ppp/2nb4/3np3/4P3/N4N2/PPPP1PPP/R1BQ1RK1 b kq - 3 6", "sq": [27]}, {"fen": "r1b1kb1r/pp2pppp/5n2/4p3/3N1B2/2N5/PqP2PPP/R2QK2R w KQkq - 0 11", "sq": [37, 35, 42]}, {"fen": "r1bqr1k1/1ppp1ppp/p2P4/8/8/4Q3/PbP1KPPP/R1B2B1R b - - 0 12", "sq": [44, 56, 49]}, {"fen": "r1bqkb1r/ppp2ppp/2n1p3/3p4/3PP1n1/2N1B3/PPP1NPPP/R2QKB1R w KQkq - 6 6", "sq": [44]}, {"fen": "r1b2rk1/pppnqppp/2n1p3/3pP1B1/1b1P4/2NB1N2/PPP2PPP/R2Q1RK1 b - - 10 9", "sq": [12]}, {"fen": "r1bk3r/pppB1p1p/4pp2/3p4/1b1PP3/2N5/PPP2PPP/R2QK1NR w KQ - 0 9", "sq": [11]}, {"fen": "1rbq1rk1/pppp1ppp/3b1n2/4pN2/2B1P3/2N5/PPP2PPP/R1BQ1RK1 b - - 2 8", "sq": [19]}, {"fen": "r4rk1/pppb1ppp/2nqpn2/2bp4/3P4/1QNBPN2/PP3PPP/R1B2RK1 w - - 0 10", "sq": [26]}, {"fen": "1rbqk2r/ppp1nppp/1B6/3PN3/8/2QP4/PPP2PPP/1R2KB1R b Kk - 0 11", "sq": [17]}, {"fen": "r1b1kb1r/pp2pppp/2np1n2/6B1/1q1pP3/5N2/P1PNBPPP/1R1QK2R b Kkq - 5 8", "sq": [33]}, {"fen": "r3kr2/ppp1qppp/2npbn2/2b1p3/2Q1P3/1BN2N2/PPPP1PPP/R1B2RK1 w q - 2 9", "sq": [34]}, {"fen": "r1bqkb1r/pppp1ppp/5n2/1B2p3/3NP3/2N5/PPPP1PPP/R1BQK2R b KQkq - 0 5", "sq": [35]}, {"fen": "rn1qkbnr/p2bpppp/2p5/1p2N3/2pPP3/2N5/PP3PPP/R1BQKB1R b KQkq - 1 6", "sq": [11]}, {"fen": "1rb1r1k1/1p1p1ppp/1q1b1n2/1Qp5/4P3/2NBB2P/PPP2PP1/1K1R3R b - - 3 14", "sq": [17]}, {"fen": "3qrrk1/pppn1pp1/2b1p2p/3P4/3P1B2/3BPN2/P1P2PPP/1Q1RR1K1 b - - 0 18", "sq": [18]}, {"fen": "r1bqkb1r/pppp1ppp/5n2/4n3/2PPp3/2N5/PP2PPPP/R1BQKB1R w KQkq - 0 6", "sq": [28]}, {"fen": "1r1q1rk1/ppp1bppp/2Ppb3/1B6/3NP3/4p3/PP3PPP/R2QK2R b KQ - 3 12", "sq": [20]}, {"fen": "r1bqkb1r/ppp1pp1p/2n3p1/3n4/3P1B2/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6", "sq": [37]}, {"fen": "r1bq2kr/ppp2ppp/2n2n2/2PpP3/1b6/2NBP3/PP2NPPP/R1BQ1RK1 b - - 0 9", "sq": [21]}, {"fen": "r1b1k2r/pp1n1ppp/8/q3p3/1bQ1n3/4BN2/PPP2PPP/R2R2K1 w k - 0 16", "sq": [36]}, {"fen": "1r2kb1r/ppp1pppp/2q1bn2/3n4/3P4/2NBBN2/PPP2PPP/R2QR1K1 w k - 9 10", "sq": [44]}, {"fen": "r2q1rk1/pppb1ppp/1bnp1n2/3Np1B1/2B1P3/3P1N1P/PPP2PP1/R2Q1RK1 b - - 2 9", "sq": [17]}, {"fen": "1k1r3r/pppbbppp/2nqpn2/1Q6/3P4/P1N2pP1/1PP2PBP/R1B2RK1 w - - 0 13", "sq": [54]}, {"fen": "rn1q1rk1/ppp2pbp/3p2p1/3Np3/2PPnBb1/4PN1P/PP3PP1/R2QKB1R w KQ e6 0 9", "sq": [37, 38]}, {"fen": "r1br2k1/pppnbpp1/1q2p2p/1N1n4/3P4/P2QBN2/1PP1BPPP/1K1RR3 w - - 0 14", "sq": [44]}, {"fen": "r1bqk2r/pppp1ppp/3b1n2/8/2PpP3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 7", "sq": [42]}, {"fen": "1rr3k1/p2b1ppp/1qn1pn2/8/3P1B2/2Q2N2/PP2PPPP/2R1KB1R b K - 2 16", "sq": [1]}, {"fen": "r1b2rk1/pppp1ppp/2n5/8/1bBBq3/5N2/PPP2PPP/RN1Q1K1R b - - 0 10", "sq": [35]}, {"fen": "r1bqk2r/ppp1bppp/7n/3Bp3/3NP3/8/PPP2PPP/RNBQ1RK1 b kq - 0 7", "sq": [35]}, {"fen": "1rb2b1r/ppk1qpp1/3p1n1p/1B1Pp3/3pP3/2N1B3/PPP2PPP/R1Q2RK1 b - - 3 13", "sq": [44, 42]}, {"fen": "r1b1k1r1/pppnqppp/5n2/3PP3/2B5/2P1BN2/P1P2PPP/R2Q1RK1 b q - 0 11", "sq": [21]}, {"fen": "r5kr/1pp2ppp/2b1p3/3pPn2/pbnP4/2NQ1NB1/PPP2PPP/1R2R1K1 w - - 18 21", "sq": [46]}, {"fen": "rn2kb1r/pp2pppp/2pq3n/5b2/3PpB2/2N5/PPP1NPPP/1R1QKB1R b Kkq - 7 7", "sq": [19]}, {"fen": "r1bqkb1r/pp3ppp/2np1n2/2PBp3/4P3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 6", "sq": [27]}, {"fen": "r1b2rk1/pp1n1ppp/3b1n2/qNp1p1B1/3P4/3B1N2/PPP2PPP/R2Q1K1R b - - 3 11", "sq": [19]}, {"fen": "r2k3r/1ppnNpp1/3pq2p/8/3PP3/3QB3/PPP2PPP/R3R1K1 b - - 0 15", "sq": [12]}, {"fen": "3r2k1/1p2rppp/p2q4/2b1p3/4B3/P1N1BN2/1PP2PPP/3RR1K1 b - - 3 21", "sq": [19]}, {"fen": "r2k3r/1ppb2pp/pb6/3p1p2/3P4/1Bn1BQ2/PPP2PPP/R4K1R w - - 0 14", "sq": [42]}, {"fen": "2kr1br1/pp3ppp/2q2n2/4p3/1nBBP3/P1N4P/1P3PPK/1R1Q1R2 b - - 0 16", "sq": [34, 35, 33]}, {"fen": "r1b1k2r/ppppqppp/2n2n2/2bNp1B1/4P3/3P1N2/PPP2PPP/R2QKB1R b KQkq - 6 6", "sq": [12]}, {"fen": "r3kb1r/1ppqnppp/p7/3pN3/3QP3/8/PPPB1PPP/R4RK1 b kq - 1 12", "sq": [11]}, {"fen": "r1b1kb1r/ppp1nppp/2n5/3pP3/4P3/N2BBQ2/PqP2PPP/4RKNR b kq - 1 9", "sq": [40]}, {"fen": "r1b3kr/1p1qbppp/2n1p3/p2p4/3P1B2/2nQ1N2/PPP1BPPP/3RR1K1 w - - 0 14", "sq": [59, 52, 42]}, {"fen": "r1b1k1r1/ppp3pp/4pp2/3p2B1/1b1nP3/2N2N2/PPP2PPP/R2QKB1R w KQq - 0 9", "sq": [30, 35]}, {"fen": "r1b1kbr1/pp1ppppp/q4n2/4n3/2NpP3/3B4/PPP2PPP/R1BQ1RK1 w q - 0 9", "sq": [43, 28]}, {"fen": "r1br2k1/ppq2p1p/2p2p2/4n3/1bB2Q2/4B2N/PPP2PPP/R5KR b - - 1 13", "sq": [34]}, {"fen": "r1b2b1r/1pp1kppp/2q1p3/p2p4/3Pn3/2N2NB1/PPPQ1PPP/3RR1K1 w - - 0 18", "sq": [51, 46]}, {"fen": "r1b1k2r/pppq1p1p/3bpnp1/nB1P4/3P4/2N1PN2/PPQ2PPP/R1B1K2R w KQkq - 3 9", "sq": [11]}, {"fen": "3r2kr/ppp1qppp/3p1n2/4p3/1b1nP3/1BNPQb2/PPPB1PPP/2RR2K1 w - - 0 14", "sq": [59, 41, 45]}, {"fen": "r1b2rk1/ppqn1ppp/2pb1n2/4p1B1/2pP4/3QPN2/PPN1BPPP/R4RK1 w - - 0 11", "sq": [43]}, {"fen": "r1b1kb1r/1p1nn1pp/pqp1p3/4Np2/2BPN3/P4Q2/1PP2PPP/R1B1K2R w KQkq f6 0 10", "sq": [36]}, {"fen": "r5kr/1p2bppp/pn3n2/2pB4/4PBb1/2N2Q2/PPP2PPP/R3R1K1 w - - 4 16", "sq": [45, 27]}, {"fen": "r1b2rk1/1p1p1ppp/1q1p1n2/1p2n3/4P3/2NP1Q2/PPP1KPPP/R1B4R w - - 1 11", "sq": [45]}, {"fen": "rnkq1b1r/p3pppp/2p1bn2/4N3/1ppPP3/2N1BQ2/PP3PPP/2KR1B1R w - - 0 10", "sq": [42]}, {"fen": "r1bq3r/pppp1kpp/8/3n4/1b2P3/3n4/PPPPKPPP/R1BQ3R w - - 0 9", "sq": [58, 27, 43]}, {"fen": "1r1qkb1r/ppp2ppp/3p2n1/3Pp3/2B1P3/2N1BP1b/PPP2P1P/R2Q1RK1 w k - 1 11", "sq": [61]}, {"fen": "r1bqkb1r/pppn1ppp/8/1B6/4p3/5N2/PPPP1PPP/R1BQK2R w KQkq - 2 8", "sq": [45]}, {"fen": "r1b2rk1/pppq1p1p/3p1p2/2b1p1B1/1nB1P3/3P1N2/P1P2PPP/R2Q1RK1 w - - 0 11", "sq": [30]}, {"fen": "r1b1k2r/ppppqppp/2nbpn2/3P4/2P5/2N1P3/PPQ1BPPP/R1B1K1NR b KQkq - 0 7", "sq": [18]}, {"fen": "1r1q2kr/ppp2pp1/3p1n2/3bb1Bp/4P3/1Q5P/PPP2PP1/1K1R1B1R w - - 0 14", "sq": [41, 27]}, {"fen": "1r1q1rk1/p1p2pp1/2b1p2p/2bpB3/2N1n3/4P3/PPP1QPPP/3R2KR w - - 4 17", "sq": [34]}, {"fen": "rk6/1pp1rpp1/4bb1B/p2p4/3n4/P1P2N2/4PPPP/1K3B1R b - - 0 26", "sq": [23, 35]}, {"fen": "r1bqkb1r/pp1p1ppp/2n2n2/4p3/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq - 0 7", "sq": [35]}, {"fen": "1rb1r1k1/1p1p1p2/1Q1bn2p/2pN1p2/2P4q/P2B3P/1P3PP1/2K2R2 b - - 5 21", "sq": [19]}, {"fen": "rnbqkb1r/pppn1ppp/8/1B2N3/3pP3/3P4/PPP2PPP/RNBQK2R w KQkq - 0 6", "sq": [28]}, {"fen": "r1b1kb1r/ppp2ppp/2n1pn2/8/3qP3/2NQ1N2/PPP3PP/R1B1KB1R b KQkq - 1 7", "sq": [35]}, {"fen": "r1b1kb1r/1p1npppp/p1pq4/3p4/3Pn3/2NBBN2/PPPQ1PPP/R3K2R w KQkq - 0 8", "sq": [51]}, {"fen": "r1br2k1/1pp2ppp/p1nq1n2/3Pp3/1b6/NB1PBN2/PPP1QPPP/R2R2K1 b - - 0 14", "sq": [18]}, {"fen": "r1b2rk1/pp1nqppp/3bPn2/2p5/3P4/2NBPN2/PPQ2PPP/R1B2RK1 b - - 0 10", "sq": [11]}, {"fen": "r2qkb1r/pp1bpppp/n1p2n2/8/2pPN3/4BN2/PP2PPPP/R2QKB1R w KQkq - 6 7", "sq": [36]}, {"fen": "r1b3kr/pp3ppp/3bp3/q2n4/3P4/1Q1BBN2/PP3PPP/R4RK1 w - - 5 15", "sq": [44]}, {"fen": "3rkbr1/pppqpppp/2n1b3/3p4/3PNB2/P2Q2N1/1PP2PPP/2KR1B1R w - - 1 12", "sq": [36]}, {"fen": "r1bk3r/p2n1ppp/Bp1Q4/2B1p3/4P3/8/PPP2PPP/2KR3R b - - 1 15", "sq": [16, 26]}, {"fen": "4r1kr/1pp2pp1/p1q2n1p/5Q2/3p4/P1NBP3/RPP2PPP/1K1R4 w - - 0 20", "sq": [42]}, {"fen": "r2q1rk1/pppbbppp/4p3/1B1pn3/3P1B2/2P1PQ2/PP1KNPPP/R3R3 w - - 5 12", "sq": [45, 25, 28]}, {"fen": "r4k1r/ppp2ppp/3qbn2/3p4/1n1P4/2NQP3/PPP2PPP/R3KB1R w KQ - 0 10", "sq": [43]}, {"fen": "3r1rk1/pppb1ppp/2n2q2/b2P4/P3pp2/4B2P/1PP1KPP1/R2Q1BR1 w - - 0 16", "sq": [44, 18]}, {"fen": "1k2r3/1pr2ppp/3pbb2/2q5/2p1P3/2NBB2P/1PPQ1PP1/3R1RK1 b - - 5 26", "sq": [43, 26]}, {"fen": "r1b1kb1r/ppq2ppp/3p1n2/2n1pN2/4P3/2NB4/PPP2PPP/R1BQ1K1R w kq - 4 9", "sq": [43]}, {"fen": "r2q1b1r/1pp1kpp1/p6p/1B1pNb2/2PPnB2/8/P1P2PPP/1R1QR1K1 w - - 0 15", "sq": [25]}, {"fen": "3r1rk1/pppbqppp/2n1p3/3p4/3PBP2/P4N1P/1PP1NPP1/R2QR1K1 b - - 0 13", "sq": [36]}, {"fen": "r1bqk1nr/ppp3pp/2n1p3/3P1p2/Qbp1P3/2N2N2/PP3PPP/R1B1KB1R b KQkq - 0 7", "sq": [18]}, {"fen": "r1bqkb1r/pp1p1ppp/4p3/8/3nnB2/P7/1PPN1PPP/R2QKB1R w KQkq - 0 8", "sq": [36]}, {"fen": "2r1r1k1/pp1b1ppp/1qnnp3/2Np4/1b1P4/3BBN1P/PPP1RPP1/R2Q2K1 b - - 10 18", "sq": [11]}, {"fen": "r2q1rk1/pppn1ppp/3b4/6B1/8/2P2N2/PPP2PPP/R2Q1RK1 b - - 4 11", "sq": [3]}, {"fen": "r3kb1r/pp2pppp/2p1bn2/4P3/1qp1P3/2N1B3/PPQ2PPP/2KR1B1R b kq - 0 10", "sq": [21]}, {"fen": "4rk1r/ppp2ppp/5n2/2b5/6b1/2N2N1P/PPP1BPP1/2KR1R2 b - - 0 16", "sq": [38]}, {"fen": "r2qk2r/ppp2ppp/2nbb3/3np3/2B1N3/3P1N2/PPP2PPP/R1BQ1RK1 b kq - 5 8", "sq": [19]}, {"fen": "r1bqk2r/pppp1ppp/2n5/2bn4/2Pp4/4PN2/PP3PPP/R1BQKB1R w KQkq - 0 7", "sq": [27]}, {"fen": "3r1rk1/pppbqppp/2nbpn2/1B4B1/3Pp3/2N2N2/PPP1QPPP/R4RK1 w - - 0 11", "sq": [45]}, {"fen": "3r1rk1/1pp2ppp/p1nbq3/3p4/3Pn3/P1N1PN2/1PQB1PPP/2RR2K1 w - - 4 19", "sq": [51]}, {"fen": "r1bq1k1r/ppp2pp1/3p1n1p/2bNp1B1/2P1P3/3B1P2/PP3P1P/R2QK2R w KQ - 0 10", "sq": [30]}, {"fen": "1k2rb1r/pppqpppp/2n1b3/8/3PpB2/P4N2/1PP1QPPP/2KR1B1R w - - 0 11", "sq": [45]}, {"fen": "rn3kr1/5Bp1/1ppb1n2/4Nb1p/3PpP2/2N1P3/PP4PP/R1B1K2R b KQ - 0 16", "sq": [6]}, {"fen": "rn2kb1r/pp2pppp/2p1bn2/q7/3PN3/3B1N2/PPPQ1PPP/R1B1K2R b KQkq - 6 7", "sq": [24]}, {"fen": "r2q1k1r/ppp2ppp/2n1b3/3p4/1b1PnN1P/1QN1P3/PP3PP1/R1B1KB1R b KQ - 2 10", "sq": [20]}, {"fen": "1k1r1b1r/ppp2ppp/2n2N2/3qpb2/8/3P1N2/PPPQBPPP/R1B1R1K1 b - - 0 11", "sq": [21, 27]}, {"fen": "rn2kbnr/pp2pppp/2p5/q4b2/3P4/N1p1PN2/PP1B1PPP/R2QKB1R w KQkq - 0 7", "sq": [51]}, {"fen": "1k1r4/1p1n1ppp/p1qb1n2/P2pPb2/8/1B2P3/1P1NQPPP/R1B1R1K1 b - - 0 20", "sq": [19, 21]}, {"fen": "3r1qr1/ppp1kppp/1bnp1n2/8/2NpP1bP/PBP2N2/1PQ2PP1/R1B1R1K1 b - - 1 15", "sq": [17]}, {"fen": "r1bq1b1r/ppppkppp/2n2N2/8/2PPp3/8/PP2PPPP/R1BQKBNR w KQ - 1 6", "sq": [21]}, {"fen": "rn2kbnr/ppq2ppp/2p5/3p4/2Pp2b1/1QN1BN2/PP2PPPP/R3KB1R w KQkq - 0 7", "sq": [44, 42]}, {"fen": "r1bqkb1r/pp2pppp/2n5/2Pp2B1/4n3/3Q1N2/PPP2PPP/RN2KB1R b KQkq - 0 6", "sq": [30]}, {"fen": "r3kb1r/ppp1pppp/3q1n2/3pPb2/8/2N3P1/PPP1PPBP/R1BQK2R b KQkq - 0 7", "sq": [19, 21]}, {"fen": "r2k1b1r/ppp2ppp/2np1n2/8/3NP1q1/2N1B2P/PPP2PP1/R2Q1RK1 b - - 0 11", "sq": [38]}, {"fen": "3r1rk1/pppq1ppp/2nbbn2/2Np4/P2Pp3/2N1B1P1/1PP1PPBP/R2QR1K1 b - - 4 13", "sq": [11, 20]}, {"fen": "r2q3r/1ppbbppp/p1nk1n2/3pp3/3PPB2/2N2NP1/PPP1QPBP/R4RK1 w - - 0 13", "sq": [37]}, {"fen": "1r1qkb1r/ppp1pp2/2n1b1pp/2Pp4/3PN3/3Q1N2/PP2BPPP/R1B1K2R b KQk - 0 9", "sq": [36]}, {"fen": "r2q2kr/1ppb1p1p/p3pbp1/2P1P3/4N3/3B4/PPQ2PPP/3R1RK1 w - - 0 17", "sq": [21]}, {"fen": "1rbq1k1r/1pp2ppp/p1n5/3pp3/4n3/P1NB1N2/1PPP1bPP/R1B1QK1R b - - 1 12", "sq": [60]}, {"fen": "r3kb1r/pppqpppp/2n1b3/8/3PpB2/3Q1N2/PPP2PPP/R3KB1R w KQkq - 0 9", "sq": [43, 45]}, {"fen": "1rb3kr/1ppp1pp1/p2bq2p/4p3/4P1n1/2NQBN2/PPP2PPP/2RR2K1 w - - 4 15", "sq": [44]}, {"fen": "r2qkb1r/pp2pppp/2npbn2/1B6/3QP3/2N2N2/PPP2PPP/R1B1K2R w KQkq - 5 7", "sq": [35]}, {"fen": "r1bq1rk1/pppp1ppp/3b1n2/1B2N3/4P3/2N5/PPP2PPP/R1BQK2R b KQ - 0 7", "sq": [28]}, {"fen": "r1b1kb1r/ppp1qppp/2np1n2/3Np3/2PP4/4BN2/PP2PPPP/R2QKB1R b KQkq - 1 6", "sq": [12]}, {"fen": "1r2r1k1/1pp2pp1/2q1b2B/p2p4/8/P2B1Q2/1bP2PPP/1K2R2R w - - 0 23", "sq": [23]}, {"fen": "r2qkb1r/ppp1pp1p/2n2np1/3p4/2PPb3/2N1QN2/PP3PPP/R1B1KB1R b KQkq - 1 7", "sq": [36]}, {"fen": "r1b3kr/pppN1pbp/2np2p1/4p3/2PPP3/3BBN2/PPQ2PPP/R3K2R w KQ - 1 12", "sq": [11]}, {"fen": "r1bqk2r/pppp1ppp/2nb4/3Pp3/8/N4N2/PPPP1PPP/R1BQK2R b KQkq - 2 6", "sq": [18]}, {"fen": "r1bqk1r1/1pp2pbp/p2p1np1/8/2PnP3/1QNBB3/PP3PPP/R4RK1 w q - 0 11", "sq": [41, 35]}, {"fen": "2bk1br1/rpq2ppp/p1p2n2/2Ppn3/8/PN1BPN2/1P2QPPP/R1B2RK1 w - - 0 13", "sq": [43]}, {"fen": "1rb1k2r/ppp2ppp/2n1p3/qB3n2/3P1BP1/2b2N2/PPP2P1P/R2Q1RK1 b k g3 0 11", "sq": [25, 42, 29]}, {"fen": "r1bqk2r/ppp2ppp/2n1pn2/6B1/1b1Pp3/2NB1N2/PPP2PPP/R2QK2R w KQkq - 0 7", "sq": [43, 45]}, {"fen": "1k1r1b1r/1pq2ppp/p2p1n2/2pPp3/2B1P1b1/P1N1B1Q1/1PP2PPP/3RR1K1 b - - 5 14", "sq": [59]}, {"fen": "rq2r1k1/ppp1bpp1/3p1n2/3Pn2p/2B1P3/2NQB3/PPP2PPP/4RRK1 w - - 1 14", "sq": [43, 34]}, {"fen": "r1bqkb1r/pp1n1ppp/3p1n2/4p3/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq e6 0 7", "sq": [35]}, {"fen": "1k3b1r/ppp2ppp/1Bn1pn2/1N1r4/8/3B1Q2/PPP2PPP/2R1R1K1 b - - 0 14", "sq": [17]}, {"fen": "1rb1k2r/2p2ppp/p1Pbp3/8/3P4/2PQ4/PP2NPqP/R3K2R b KQk - 1 14", "sq": [63]}, {"fen": "r1b1k1nr/pppp1ppp/2n3q1/3Pp3/1b2P3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 3 6", "sq": [18]}, {"fen": "r5kr/pppb1pp1/1bnqp2p/3p4/3PN3/3Q1NP1/PPPB1PBP/1R2R1K1 b - - 0 14", "sq": [36, 19]}, {"fen": "r1b4r/pppk1pbp/2nqpp2/3P4/3P4/2N2N2/PPP1BPPP/R2Q1RK1 b - - 0 9", "sq": [18]}, {"fen": "r1bqk2r/ppp2ppp/2n2n2/3P4/1b6/2Q2NP1/PP2PP1P/R1B1KB1R w KQkq - 1 9", "sq": [42, 18]}, {"fen": "1r3b1r/pppkpppp/2n1q3/3n4/3P1B2/2NQ1N2/PPP1BPPP/R4RK1 w - - 4 11", "sq": [37]}, {"fen": "rnbqk2r/ppp1ppbp/6p1/3N4/3P4/4B3/PP2PPPP/R2QKBNR b KQkq - 0 6", "sq": [27]}, {"fen": "3r1b1r/pppbkppp/2n1pn2/6B1/1q1PQ3/2N2NP1/PPP2PBP/R4RK1 w - - 1 11", "sq": [36]}, {"fen": "1r1qk2r/ppp2ppp/2nBpn2/3p1b2/3P4/2N1PN2/PPP2PPP/1R1QKB1R w Kk - 1 8", "sq": [19]}, {"fen": "3r2k1/pppqrppp/2n1b3/3p4/3PBB2/2P1PN2/P1Q2PPP/1K1RR3 b - - 0 17", "sq": [36]}, {"fen": "rk1q3r/ppp3pp/2n1b3/3npp2/3PN3/1B3N2/PPPQKPPP/4R2R w - - 0 14", "sq": [36]}, {"fen": "r2qkb1r/pp1npppp/2p1bn2/4P3/2pP4/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 7", "sq": [21]}, {"fen": "1k1r4/ppprpp1p/2q1bb2/4P1p1/3P4/2BB1N2/P3QPPP/1R4KR w - - 1 22", "sq": [42, 21]}, {"fen": "r1kq1b1r/1pp1pppp/4b3/pN1p4/1Q1PnB2/4PN1P/PPP2PP1/R3KB1R w KQ - 0 11", "sq": [33]}, {"fen": "r2qkb1r/ppp2ppp/2n1b3/1N1p4/4p3/3B1N2/PPPP1PPP/R1BQR1K1 w kq - 0 10", "sq": [43, 45]}, {"fen": "r3kbr1/pppq1p1p/2np1np1/3Pp3/2P1P1b1/2N1BN2/PPB2PPP/R2QK2R b KQq - 0 9", "sq": [18]}, {"fen": "r3kb1r/ppqb1ppp/2np1n2/1B2p3/3NPB2/2N5/PPP2PPP/R2Q1RK1 w kq e6 0 10", "sq": [37, 35]}, {"fen": "r1bqk2r/pppnbppp/4Pn2/8/2QP4/2N2N2/PP2PPPP/R1B1KB1R b KQkq - 0 8", "sq": [11]}, {"fen": "1rbk1b1r/ppq1pppp/5n2/2p1P3/1n1p4/2NPBN2/PPP1QPPP/1K1R1B1R w - - 0 10", "sq": [44, 42, 21]}, {"fen": "rn1qk2r/pppb1ppp/4p2n/1B1p2B1/1b1PP3/2N2N2/PPP2PPP/R2QK2R b KQkq - 7 6", "sq": [3]}, {"fen": "r1b1k2r/pp2bppp/1q3n2/2pPp3/2BN4/P1NP4/1PPQ1PPP/R1B2RK1 b kq - 0 10", "sq": [35]}, {"fen": "4r1k1/p1pq1pp1/2pbb2p/P7/1r1QN3/4B3/1PP2PPP/1R1R2K1 w - - 2 21", "sq": [35, 19]}, {"fen": "r1bq1rk1/1ppn1ppp/3b1n2/p2P2B1/3pP3/2NB1N2/PP3PPP/2RQK2R w K - 0 10", "sq": [42]}, {"fen": "1k1r3r/1pp1qpbp/p1n2p2/3Np3/2Q5/3P4/PP1P1PPP/R1B1R1K1 b - - 5 17", "sq": [12]}, {"fen": "2rqkb1r/1pp1nppp/3p4/p2P4/3p4/2N2N2/PPbQ1PPP/R1B2KR1 b k - 1 12", "sq": [42, 50]}, {"fen": "r2q1b1r/1pNkpppp/p1n1b3/3p4/3Pn3/4P1B1/PPP1NPPP/R2QKB1R b KQ - 2 8", "sq": [46, 0, 20]}, {"fen": "r1bqkbnr/pp3ppp/3p4/2p1B3/3nP3/2N2N2/PPP2PPP/R2QKB1R b KQkq - 0 6", "sq": [28]}, {"fen": "r1b2rk1/ppP2ppp/2n1pq2/8/1b1Pn3/2N1PP2/PP2N1PP/R1BQKB1R b KQ - 0 9", "sq": [36]}, {"fen": "r1bq1rk1/pppp1ppp/3b1n2/4N3/4P3/2N5/PPPB1PPP/R2QKB1R b KQ - 0 7", "sq": [28]}, {"fen": "r3r1k1/ppp2pb1/2b2npp/4q3/3BP3/2N5/PPB1QPPP/3R1RK1 b - - 3 16", "sq": [28]}, {"fen": "3r1rk1/ppp1bpp1/3p1n2/4p3/2B1P1q1/P1NP4/1PnQ1PP1/1RB3KR b - - 1 15", "sq": [50]}, {"fen": "r1bqk2r/pp1n1ppp/2p2n2/4p3/1b1PN3/3Q1P2/PPPBN1PP/R3KB1R b KQkq - 3 8", "sq": [33]}, {"fen": "r2qr1k1/ppp1bpp1/2n4p/1N1p1p2/3Pn3/2BQPNP1/PPP2P1P/R4RK1 w - - 2 14", "sq": [42]}, {"fen": "r2q1rk1/ppp2ppp/2nbb3/3np3/2B1N3/3P1N2/PPP2PPP/1RBQ1RK1 b - - 7 9", "sq": [19]}, {"fen": "r1b1r3/pppkqpp1/2np1n1p/2b1p1B1/4P3/1BNP1N1P/PPP2PP1/R2QR1K1 w - - 0 11", "sq": [30]}, {"fen": "r1bk1b1r/1p1n1ppp/3p1n2/pBq1pN2/4P3/2N1BP2/PPP3PP/R2Q1RK1 b - - 3 11", "sq": [26]}, {"fen": "r2q1kr1/1pp1ppbp/p1nP1np1/3P4/6b1/2NQBN2/PP2PPPP/1K1R1B1R b - - 0 12", "sq": [18]}, {"fen": "1r2k2r/1pqbbpp1/p1n4p/3p4/2Np4/5N2/PPPB1PPP/1R1QR1K1 w k - 0 15", "sq": [34]}, {"fen": "r6r/pppk1ppp/2nbb3/3P1pN1/8/3QB3/PPP2PPP/R3R1K1 w - - 1 18", "sq": [20, 18]}, {"fen": "r1bqk2r/ppp2ppp/2n2n2/2b1N3/2p1P3/2PP4/PP1N1PPP/R1BQK2R b KQkq - 0 7", "sq": [28]}, {"fen": "rbb3k1/1p3ppp/1q1r1n2/p1p1n3/4p3/1BN1B1N1/PPPQ1PPP/R3R1K1 w - - 0 18", "sq": [51]}, {"fen": "r1b1kb1r/ppp1pp1p/2nq1np1/3P4/3P4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 1 6", "sq": [18]}, {"fen": "1rbqkb1r/ppp2ppp/5n2/3P4/1nNp4/3B1N2/PPP2PPP/R1BQK2R w KQk - 1 8", "sq": [43]}, {"fen": "rq2k2r/pp2ppbp/2p2n2/8/3Pp3/2N1B3/nPP2PPP/2RQKB1R w Kkq - 0 11", "sq": [58, 48]}, {"fen": "r1bq2kr/ppp2ppp/3bpn2/4P1B1/Q1p5/2N1P3/PP3PPP/R3KB1R w KQ - 1 10", "sq": [19, 21]}, {"fen": "r2qkb1r/pb1p1ppp/1pN2n2/4p3/2B1P3/2N5/PPP2PPP/R1BQ1RK1 b kq - 0 8", "sq": [18, 3]}, {"fen": "2b1kb1r/rppq1pp1/2n1p2p/1N1pPn2/p2P1B2/3B1N2/PPP2PPP/2RQ1RK1 b k - 5 11", "sq": [8]}, {"fen": "r3kbnr/p1p1p1pp/1q6/8/2N5/2N5/PPPQ1PPP/R1B2K1R b - - 0 16", "sq": [17]}, {"fen": "r1b1k2r/ppq1ppbp/2n2n2/3P2p1/3P4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 8", "sq": [18]}, {"fen": "r1bq1rk1/1ppp1ppp/p1Bb1n2/4p3/4P3/2NP1N2/PPP2PPP/R1BQK2R b KQ - 0 7", "sq": [18]}, {"fen": "r1bq2r1/pppk1p1p/3bpp2/8/2pPP3/PnN2N2/1P2BPPP/2RQ1RK1 w - - 0 12", "sq": [58]}, {"fen": "r4rk1/ppp2ppp/2n1bn2/8/3p4/2NPBQ2/PPP2PPP/R4RK1 w - - 0 12", "sq": [44, 42]}, {"fen": "r1b3kr/ppq1nppp/3bp3/3p4/3P4/P1nB1N2/1P1B1PPP/R2QR1K1 w - - 0 16", "sq": [59, 42]}, {"fen": "1r1r2k1/pppb1ppp/8/3Bq3/1b6/4P1P1/PPPBQP1P/1R3RK1 b - - 0 16", "sq": [27, 33]}, {"fen": "r2q1b1r/ppp2kpp/5N2/3p4/1n2P3/2NP4/PPP2PPP/R1BQK2R b KQ - 0 9", "sq": [21]}, {"fen": "r2qk2r/pppb1pbp/2n1pnp1/3pP3/2PP1B2/2N2N2/PP3PPP/R2QKB1R w KQkq - 1 8", "sq": [21]}, {"fen": "4r1k1/1pp2Rpp/p1n5/3qp1Q1/8/3P4/PPP3PP/1R4K1 b - - 0 21", "sq": [13]}, {"fen": "4rrk1/1pp2pp1/pqb1p2p/3nP1B1/1b2N3/1Q6/PPP1BPPP/3R2KR w - - 0 17", "sq": [30]}, {"fen": "3rkb1r/pppb1ppp/1qn1p3/4P1B1/2BPN1n1/P2Q1N2/1P3PPP/R4RK1 b k - 2 13", "sq": [3]}, {"fen": "rn1qkb1r/pp1bpppp/2p5/3p4/3PN3/3Q4/PPP1BPPP/R1B1K1NR b KQkq - 0 6", "sq": [36]}, {"fen": "r1bq1k1r/ppp2ppp/2Q5/4P3/8/2n1PN1P/PPP1BPP1/R4RK1 b - - 0 13", "sq": [18, 52, 42]}, {"fen": "r2kr3/pp3ppp/2p1b3/3p4/3Pn3/P1NBBQ2/P1P2PPP/R3K2R b KQ - 0 12", "sq": [42]}, {"fen": "1r2r1k1/1ppqppbp/4bnp1/p1Pp4/1n1P4/1QNBPN2/PP1B1PPP/3R1RK1 w - - 6 15", "sq": [43]}, {"fen": "r1b2rk1/ppp2pp1/3pqn1p/4p1B1/3bP3/P1NP4/1PPQBPPP/1R3RK1 w - - 0 12", "sq": [30]}, {"fen": "r1bqk2r/ppp2ppp/5n2/3n4/2Bb4/1Q3N2/PP3PPP/RNB2RK1 w kq - 0 10", "sq": [35]}, {"fen": "r1br2k1/1ppq1ppp/2nb4/p2np3/2B1P3/3QBN2/PPP2PPP/3R1RK1 w - - 0 15", "sq": [44, 27]}, {"fen": "2r1r1k1/ppp1bppp/2n5/3NP3/2B1PPb1/4B3/PPK3PP/R1R5 w - - 7 15", "sq": [12]}, {"fen": "r2qkr2/1pp1n1pp/p2p1p2/4p3/3bP3/1BNP4/PPPBbPPP/4RRK1 w q - 0 14", "sq": [61, 52]}, {"fen": "1rb4r/ppp1kpp1/4p2p/3P1q2/1b1PN3/3Q1N2/PPP2PPP/4RRK1 w - - 3 16", "sq": [60]}];
 // ================= CONTENIDO =================
 const BOOK = [
 'e2e4 e7e5 g1f3 b8c6 f1c4 f8c5 c2c3 g8f6 d2d3 d7d6 e1g1 e8g8',
@@ -1046,9 +1137,71 @@ const ENDGAMES = [
     tip: 'Primero Td1+ para alejar al rey rival. Después Td4: cuando tu rey salga y empiecen los jaques, la torre en d4 tapa el jaque y corona el peón.' },
   { id: 'philidor', name: 'Posición de Philidor (defensa)', fen: '4k3/8/r7/4PK2/8/8/8/1R6 b - - 0 1', color: 'b', goal: 'hold', max: 15,
     theory: 'Con negras te defendés de una torre y peón. La técnica de Philidor: tu torre se queda en la tercera fila (la sexta para las blancas) para que el rey blanco no pueda avanzar. Cuando el peón avance, la torre va a la última fila y da jaques desde atrás.',
-    tip: 'Mantené la torre en la fila 6 mientras el peón esté en la quinta. Si el peón avanza a e6, llevá la torre a la primera fila y jaqueá al rey por detrás: ya no tiene dónde esconderse.' }
+    tip: 'Mantené la torre en la fila 6 mientras el peón esté en la quinta. Si el peón avanza a e6, llevá la torre a la primera fila y jaqueá al rey por detrás: ya no tiene dónde esconderse.' },
+  { id: 'cuadrado', name: 'La regla del cuadrado', fen: '8/4k3/8/8/P7/8/8/6K1 b - - 0 1', color: 'b', goal: 'hold', max: 8,
+    theory: 'Para saber si tu rey alcanza a un peón que corre solo, imaginá un cuadrado desde el peón hasta la casilla de coronación. Si tu rey puede entrar en ese cuadrado, lo alcanza. Si no, el peón corona.',
+    tip: 'El peón de a4 tiene un cuadrado de a4 a e8. Tu rey ya está dentro: movete en diagonal hacia el peón (Rd6, Rc6...) y no te salgas del cuadrado.' },
+  { id: 'oposicion', name: 'Rey y peón: ganar con oposición', fen: '8/8/8/4k3/8/4K3/4P3/8 w - - 0 1', goal: 'promote', max: 25,
+    theory: 'Con rey y peón contra rey, el que tiene la oposición (reyes enfrentados con una casilla en el medio y el rival obligado a mover) gana la pulseada. Tu peón en segunda fila tiene jugadas de reserva: usalas para recuperar la oposición cuando haga falta.',
+    tip: 'Llevá tu rey adelante del peón, no atrás. Si el rey rival te enfrenta, una jugada de peón (e3 o e4) te devuelve la oposición.' },
+  { id: 'damapeon', name: 'Dama contra peón en séptima', fen: '8/8/8/8/8/Q7/3p4/2k2K2 w - - 0 1', goal: 'mate', max: 40,
+    theory: 'El peón está a punto de coronar. La técnica: con jaques y clavadas obligás al rey rival a ponerse delante de su propio peón. Cada vez que lo hace, ganás un tiempo para acercar tu rey. Repetís hasta capturar el peón y dar mate.',
+    tip: 'Buscá jaques que obliguen al rey a ir a d1 (delante del peón). Cuando bloquea el peón, acercá tu rey una casilla.' }
 ];
-if (typeof module !== 'undefined') module.exports = { BOOK, BOTS, OPENINGS, TACTICS, ENDGAMES, PRINCIPLES };
+
+
+// ---------- curso de medio juego (posiciones verificadas con el motor) ----------
+const COURSE = [
+  { id: 'h7', name: 'Atacar al rey enrocado', icon: 'Q',
+    theory: 'El punto débil del enroque corto es h7 (h2 para las blancas): solo lo defiende el rey. Si tu alfil apunta a h7, tu caballo puede llegar a g5 y tu dama a h5, el sacrificio Axh7+ suele ganar. Antes de sacrificar, contá: ¿llega la dama a h5 con jaque o amenaza de mate?',
+    tasks: [
+      { fen: 'r1bq1rk1/ppp2ppp/2n5/3p2N1/3P4/3B4/PPP2PPP/R2QK2R w KQ - 0 10', ok: ['d3h7'], idea: 'Axh7+ es el sacrificio griego. Si Rxh7, Dh5+ Rg8 y Dh7 es mate. Si el rey no captura (Rh8), el alfil y la dama siguen atacando y ganaste un peón con ataque.' },
+      { fen: 'r4rk1/ppp2ppp/2nb4/6N1/3q4/3B4/PPP2PPP/R2Q1RK1 w - - 0 12', ok: ['d3h7'], idea: 'Otra vez Axh7+: el alfil, el caballo de g5 y la dama (que llega a h5) atacan juntos. Fijate que la dama negra en d4 no llega a defender.' }
+    ] },
+  { id: 'torres', name: 'Torres activas', icon: 'R',
+    theory: 'Las torres necesitan columnas abiertas (sin peones). Desde una columna abierta pueden entrar a la séptima fila del rival, donde atacan peones y encierran al rey. Una torre en séptima suele valer como un peón extra.',
+    tasks: [
+      { fen: '6k1/pp3pp1/7p/8/8/8/PP3PPP/3R2K1 w - - 0 1', ok: ['d1d7'], idea: 'Td7: la torre entra a la séptima por la columna abierta y ataca b7 y f7. El rival no puede defender los dos peones.' },
+      { fen: 'r4rk1/pp3ppp/2p5/8/8/2P5/PP3PPP/R4RK1 w - - 0 1', ok: ['f1d1', 'a1d1', 'f1e1', 'a1e1'], idea: 'Las columnas d y e están abiertas: el primero que ponga una torre ahí la controla. Td1 o Te1 son la idea; después se dobla la otra torre.' }
+    ] },
+  { id: 'pasados', name: 'Peones pasados', icon: 'P',
+    theory: 'Un peón pasado no tiene peones rivales delante ni en las columnas vecinas. Hay que empujarlo: cuanto más avanza, más piezas rivales tienen que vigilarlo. Y si el pasado es del rival, frenalo cuanto antes, con el rey o con una pieza delante.',
+    tasks: [
+      { fen: '8/5pk1/6p1/1P6/8/6P1/5PK1/8 w - - 0 1', ok: ['b5b6'], idea: 'b6: el peón pasado corre y el rey negro está lejos. Tu rey defiende tus peones mientras el de b corona.' },
+      { fen: '8/8/8/8/1p3k2/8/8/3K4 w - - 0 1', ok: ['d1c2'], idea: 'Rc2 es la única: tu rey entra en el cuadrado del peón y lo alcanza. Rc1 o Rd2 parecen iguales, pero llegan una jugada tarde.' }
+    ] },
+  { id: 'defensa', name: 'Defender antes de atacar', icon: 'K',
+    theory: 'Antes de lanzarte al ataque, mirá qué amenaza el rival. Una torre rival en una columna abierta apuntando a tu primera fila puede dar mate del pasillo si tu rey no tiene casillas de escape.',
+    tasks: [
+      { fen: '3r2k1/5ppp/8/8/8/8/1Q3PPP/6K1 w - - 0 1', ok: ['h2h3', 'g2g3', 'h2h4', 'b2c2', 'b2b1', 'b2c1', 'f2f4', 'f2f3', 'g2g4'], idea: 'Las negras amenazan Td1 mate. Hay que darle aire al rey (h3, g3) o cubrir la primera fila con la dama (Dc2, Db1). Recién después pensás en atacar.' }
+    ] }
+];
+
+// ---------- nombres de aperturas (para estadísticas) ----------
+const OPENING_NAMES = [
+  ['e2e4', 'Apertura de peón de rey'], ['d2d4', 'Apertura de peón de dama'], ['c2c4', 'Apertura Inglesa'], ['g1f3', 'Apertura Réti'], ['other', 'Otras aperturas'],
+  ['e2e4 e7e5', 'Partida abierta'], ['e2e4 e7e5 g1f3 b8c6', 'Partida abierta'],
+  ['e2e4 e7e5 g1f3 b8c6 f1c4', 'Apertura Italiana'], ['e2e4 e7e5 g1f3 b8c6 f1c4 g8f6', 'Defensa de los Dos Caballos'],
+  ['e2e4 e7e5 g1f3 b8c6 f1b5', 'Apertura Española'], ['e2e4 e7e5 g1f3 b8c6 d2d4', 'Apertura Escocesa'],
+  ['e2e4 e7e5 g1f3 b8c6 b1c3', 'Cuatro Caballos'], ['e2e4 e7e5 g1f3 g8f6', 'Defensa Petrov'], ['e2e4 e7e5 g1f3 d7d6', 'Defensa Philidor'],
+  ['e2e4 e7e5 d1h5', 'Ataque Parham (dama temprana)'], ['e2e4 e7e5 f1c4', 'Apertura de Alfil'], ['e2e4 e7e5 f2f4', 'Gambito de Rey'], ['e2e4 e7e5 b1c3', 'Apertura Vienesa'],
+  ['e2e4 c7c5', 'Defensa Siciliana'], ['e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6', 'Siciliana Najdorf'], ['e2e4 c7c5 b1c3', 'Siciliana Cerrada'], ['e2e4 c7c5 c2c3', 'Siciliana Alapin'],
+  ['e2e4 e7e6', 'Defensa Francesa'], ['e2e4 c7c6', 'Defensa Caro-Kann'], ['e2e4 d7d5', 'Defensa Escandinava'], ['e2e4 g7g6', 'Defensa Moderna'], ['e2e4 d7d6', 'Defensa Pirc'], ['e2e4 g8f6', 'Defensa Alekhine'], ['e2e4 b8c6', 'Defensa Nimzowitsch'],
+  ['d2d4 d7d5', 'Partida de peón de dama'], ['d2d4 d7d5 c2c4', 'Gambito de Dama'], ['d2d4 d7d5 c2c4 e7e6', 'Gambito de Dama Rehusado'], ['d2d4 d7d5 c2c4 c7c6', 'Defensa Eslava'], ['d2d4 d7d5 c2c4 d5c4', 'Gambito de Dama Aceptado'],
+  ['d2d4 d7d5 c1f4', 'Sistema Londres'], ['d2d4 g8f6 c1f4', 'Sistema Londres'], ['d2d4 d7d5 g1f3 g8f6 c1f4', 'Sistema Londres'], ['d2d4 g8f6 g1f3 d7d5 c1f4', 'Sistema Londres'],
+  ['d2d4 g8f6', 'Defensa India'], ['d2d4 g8f6 c2c4 g7g6', 'India de Rey / Grünfeld'], ['d2d4 g8f6 c2c4 e7e6 b1c3 f8b4', 'Defensa Nimzo-India'], ['d2d4 f7f5', 'Defensa Holandesa'],
+  ['d2d4 g8f6 c2c4 c7c5', 'Defensa Benoni']
+].map(([m, n]) => [m === 'other' ? [] : m.split(' '), n]);
+function openingName(moves) {
+  let best = 'Otras aperturas', bl = 0;
+  for (const [pre, n] of OPENING_NAMES) {
+    if (!pre.length || pre.length < bl || pre.length > moves.length) continue;
+    if (pre.every((u, i) => moves[i] === u)) { best = n; bl = pre.length; }
+  }
+  return best;
+}
+
+if (typeof module !== 'undefined') module.exports = { COURSE, openingName, BOOK, BOTS, OPENINGS, TACTICS, ENDGAMES, PRINCIPLES };
 
 // ================= ENTRENADOR =================
 const PN = { P: 'peón', N: 'caballo', B: 'alfil', R: 'torre', Q: 'dama', K: 'rey' };
@@ -1146,7 +1299,7 @@ function explainMove(fenBefore, uci, A, B, opts) {
   else key = 'blunder';
   const bestM = A.uci ? c.findMove(A.uci) : null;
   const bestSan = bestM ? c.san(bestM, legal) : '';
-  const lines = [];
+  const lines = [], tags = [];
   const matBefore = materialOf(c, side) - materialOf(c, side === 'w' ? 'b' : 'w');
   c.make(m);
   const after1 = c.clone();
@@ -1191,7 +1344,7 @@ function explainMove(fenBefore, uci, A, B, opts) {
     const ref = B.pv && B.pv[0] ? c.findMove(B.pv[0]) : null;
     const refSan = ref ? c.san(ref) : '';
     if (isMate(after) && after < 0) {
-      lines.push(`Esto permite mate en ${mateIn(after)}: ${sanLine(after1.fen(), B.pv, 5)}.`);
+      lines.push(`Esto permite mate en ${mateIn(after)}: ${sanLine(after1.fen(), B.pv, 5)}.`); tags.push('mate');
     } else if (ref) {
       // balance de material tras la línea
       const cc = after1.clone(); playUcis(cc, B.pv.slice(0, 4));
@@ -1199,7 +1352,7 @@ function explainMove(fenBefore, uci, A, B, opts) {
       const lost = matBefore - matAfter;
       const hangNow = hanging(c, side);
       if (ref.c && lost >= 150) {
-        const isMoved = ref.t === m.t;
+        const isMoved = ref.t === m.t; tags.push('hang');
         lines.push(isMoved
           ? `${cap(PIECE_AT(c.b[ref.t], ref.t, 'tu'))} queda mal defendido${c.b[ref.t].toUpperCase() === 'R' || c.b[ref.t].toUpperCase() === 'Q' ? 'a' : ''}: el rival juega ${refSan} y gana material.`
           : `Dejás ${PIECE_AT(c.b[ref.t], ref.t, 'tu')} sin defensa suficiente: el rival juega ${refSan} y gana material.`);
@@ -1207,6 +1360,10 @@ function explainMove(fenBefore, uci, A, B, opts) {
         c.make(ref);
         const fk = forkTargets(c, ref.t).filter(x => x.p.toUpperCase() !== 'P');
         c.unmake();
+        if (fk.length >= 2) tags.push('fork');
+        else if (lost >= 150) tags.push('lost');
+        else if (hangNow.length && VAL[hangNow[0].p.toUpperCase()] >= 300) tags.push('hang');
+        else tags.push('position');
         if (fk.length >= 2) lines.push(`El rival responde ${refSan}, con horquilla sobre ${fk.slice(0, 2).map(x => PIECE_AT(x.p, x.s, 'tu')).join(' y ')}.`);
         else if (lost >= 150) lines.push(`Después de ${sanLine(after1.fen(), B.pv, 4)} perdés material.`);
         else if (hangNow.length && VAL[hangNow[0].p.toUpperCase()] >= 300) lines.push(`Ojo: ${PIECE_AT(hangNow[0].p, hangNow[0].s, 'tu')} queda colgad${['R', 'Q'].includes(hangNow[0].p.toUpperCase()) ? 'a' : 'o'}.`);
@@ -1215,11 +1372,12 @@ function explainMove(fenBefore, uci, A, B, opts) {
     }
     // 2) qué ofrecía la mejor jugada
     if (bestM) {
-      if (isMate(before) && before > 0) lines.push(`Tenías mate en ${mateIn(before)} empezando con ${bestSan}.`);
-      else if (bestM.c && VAL[bestM.c.toUpperCase()] >= VAL[bestM.p.toUpperCase()] - 20) lines.push(`Podías capturar ${PIECE_AT(bestM.c, bestM.t, 'el')} con ${bestSan}.`);
+      if (isMate(before) && before > 0) { lines.push(`Tenías mate en ${mateIn(before)} empezando con ${bestSan}.`); tags.push('missmate'); }
+      else if (bestM.c && VAL[bestM.c.toUpperCase()] >= VAL[bestM.p.toUpperCase()] - 20 && tags.push('misscap')) lines.push(`Podías capturar ${PIECE_AT(bestM.c, bestM.t, 'el')} con ${bestSan}.`);
       else {
         const cb = new Chess(fenBefore); cb.make(bestM);
         const fk = forkTargets(cb, bestM.t).filter(x => x.p.toUpperCase() !== 'P');
+        if (fk.length >= 2) tags.push('misstac');
         if (fk.length >= 2) lines.push(`Con ${bestSan} hacías una horquilla sobre ${fk.slice(0, 2).map(x => PIECE_AT(x.p, x.s, 'el')).join(' y ')}.`);
         else if (bestM.c) lines.push(`Lo mejor era ${bestSan}, capturando ${PIECE_AT(bestM.c, bestM.t, 'el')}.`);
         else lines.push(`Lo mejor era ${bestSan}.`);
@@ -1229,13 +1387,13 @@ function explainMove(fenBefore, uci, A, B, opts) {
     if (fullmove <= 10) {
       const before0 = new Chess(fenBefore);
       const undev = undevelopedMinors(before0, side).length;
-      if (t === 'Q' && fullmove <= 6 && !m.c) lines.push('Sacar la dama tan temprano la expone: el rival la ataca mientras desarrolla y vos perdés tiempo.');
-      else if (t === 'K' && !m.fl && (before0.cr & (side === 'w' ? 3 : 12))) lines.push('Mover el rey te quita el derecho a enrocar.');
-      else if (t === 'P' && [0, 1, 6, 7].includes(m.f & 7) && !m.c && undev >= 2) lines.push('En la apertura los peones de los costados casi no ayudan. Priorizá el centro y el desarrollo.');
-      else if ((t === 'N' || t === 'B') && undev >= 2 && ![57, 62, 58, 61, 1, 6, 2, 5].includes(m.f)) lines.push('Moviste otra vez una pieza que ya estaba desarrollada. Primero sacá las que siguen en su casilla.');
+      if (t === 'Q' && fullmove <= 6 && !m.c && tags.push('openp')) lines.push('Sacar la dama tan temprano la expone: el rival la ataca mientras desarrolla y vos perdés tiempo.');
+      else if (t === 'K' && !m.fl && (before0.cr & (side === 'w' ? 3 : 12)) && tags.push('openp')) lines.push('Mover el rey te quita el derecho a enrocar.');
+      else if (t === 'P' && [0, 1, 6, 7].includes(m.f & 7) && !m.c && undev >= 2 && tags.push('openp')) lines.push('En la apertura los peones de los costados casi no ayudan. Priorizá el centro y el desarrollo.');
+      else if ((t === 'N' || t === 'B') && undev >= 2 && ![57, 62, 58, 61, 1, 6, 2, 5].includes(m.f) && tags.push('openp')) lines.push('Moviste otra vez una pieza que ya estaba desarrollada. Primero sacá las que siguen en su casilla.');
     }
   }
-  return { key, san, loss, accLoss, lines, bestSan, bestUci: A.uci, isBest, before, after };
+  return { key, san, loss, accLoss, lines, tags, bestSan, bestUci: A.uci, bestPv: A.pv, isBest, before, after };
 }
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -1357,7 +1515,7 @@ function explainRival(fenBefore, uci, A, B, opts) {
     else if (refSan) lines.push(`Error del rival: lo podías aprovechar con ${refSan}.`);
     if (bestSan) lines.push(`Lo mejor para el rival era ${bestSan}.`);
   }
-  return { key, san, loss, accLoss, lines, bestSan, bestUci: A.uci, refUci: B.pv && B.pv[0], refSan, isBest, rival: true, before, after };
+  return { key, san, loss, accLoss, lines, bestSan, bestUci: A.uci, bestPv: A.pv, refUci: B.pv && B.pv[0], refPv: B.pv, refSan, isBest, rival: true, before, after };
 }
 // curva de % de victoria (misma escala que usan los sitios de ajedrez para la precisión)
 function winPctL(cp) { if (isMate(cp)) return cp > 0 ? 100 : 0; const x = Math.max(-1000, Math.min(1000, cp)); return 100 / (1 + Math.exp(-0.00368208 * x)); }
@@ -1630,7 +1788,7 @@ function toast(t) {
 
 // ---------- tablero ----------
 const board = $('#board');
-function viewPos() { return S.view === S.moves.length ? S.c : new Chess(S.fens[S.view]); }
+function viewPos() { if (S.var) return varPos(); return S.view === S.moves.length ? S.c : new Chess(S.fens[S.view]); }
 function canMove() {
   if (S.busy || S.thinking || S.view !== S.moves.length) return false;
   if (!['game', 'opening', 'puzzle'].includes(S.mode)) return false;
@@ -1657,11 +1815,11 @@ function arrowsSvg() {
 }
 function renderBoard() {
   const pos = viewPos();
-  const last = S.view > 0 ? S.moves[S.view - 1] : null;
+  const last = S.var ? (S.var.idx > 0 ? S.var.line[S.var.idx - 1] : null) : S.view > 0 ? S.moves[S.view - 1] : null;
   const lf = last ? sqIdx(last.slice(0, 2)) : -1, lt = last ? sqIdx(last.slice(2, 4)) : -1;
   const chk = pos.inCheck() ? (pos.turn === 'w' ? pos.kw : pos.kb) : -1;
   const tg = S.sel >= 0 && P.legal && canMove() ? legalTargets(S.sel) : [];
-  const rec = S.view > 0 ? S.rec[S.view - 1] : null;
+  const rec = !S.var && S.view > 0 ? S.rec[S.view - 1] : null;
   let h = '';
   for (let i = 0; i < 64; i++) {
     const s = S.orient === 'w' ? i : 63 - i, r = s >> 3, f = s & 7, light = (r + f) % 2 === 0;
@@ -1702,12 +1860,14 @@ function squareAt(x, y) {
 let ghostEl = null;
 board.addEventListener('contextmenu', e => e.preventDefault());
 board.addEventListener('pointerdown', e => {
+  if (S.mode === 'coords' || S.mode === 'hang') { e.preventDefault(); drillTap(e); return; }
   const el = e.target.closest('.sq'); if (!el) return;
   const s = +el.dataset.sq;
   if (e.button === 2) { S.rc = s; e.preventDefault(); return; }
   if (S.uarrows.length || S.marks.length) { S.uarrows = []; S.marks = []; renderBoard(); }
   if (S.mode === 'game' && S.game && S.game.over && S.moves.length) {
     const r = board.getBoundingClientRect(), right = e.clientX - r.left > r.width / 2;
+    if (S.var) { varNav(right ? 'next' : 'prev'); return; }
     stopAuto(); S.view = right ? Math.min(S.moves.length, S.view + 1) : Math.max(0, S.view - 1); S.arrows = []; render(); return;
   }
   if (!canMove()) { if (S.view !== S.moves.length && ['game', 'opening', 'puzzle'].includes(S.mode)) { S.view = S.moves.length; S.arrows = []; render(); } return; }
@@ -1790,8 +1950,8 @@ function bar(who) {
     color = S.user === 'w' ? 'b' : 'w';
     if (S.mode === 'game' && S.game) { const b = S.game.bot; name = S.game.end ? 'Rey rival' : b.name; elo = S.game.end ? '' : b.elo; av = S.game.end ? '#3c3a37' : AVC[Math.max(0, BOTS.indexOf(b)) % AVC.length]; letter = S.game.end ? glyph('k') : (b.name || '?')[0].toUpperCase(); }
     else if (S.mode === 'opening') { name = 'Línea teórica'; av = '#5a5f9e'; letter = glyph('b'); }
-    else if (S.mode === 'puzzle') { name = 'Problema táctico'; av = '#9a6a2f'; letter = glyph('n'); }
-    else { const b = BOTS[P.botIdx]; name = b.name; elo = b.elo; av = AVC[P.botIdx % AVC.length]; letter = b.name[0]; }
+    else if (S.mode === 'puzzle' || S.mode === 'coords' || S.mode === 'hang') { name = S.mode === 'puzzle' ? 'Problema táctico' : 'Ejercicio'; av = '#9a6a2f'; letter = glyph('n'); }
+    else { const b = curBot(); name = b.name; elo = b.elo; av = P.botIdx === -1 ? '#26a58c' : AVC[P.botIdx % AVC.length]; letter = b.name[0]; }
   }
   const capt = captured(pos, color === 'w' ? 'b' : 'w');
   const diff = materialOf(pos, color) - materialOf(pos, color === 'w' ? 'b' : 'w');
@@ -1960,6 +2120,8 @@ async function finishGame(st) {
     const rated = !g.undo; let delta = 0;
     if (rated) { const score = win ? 1 : draw ? 0.5 : 0, exp = 1 / (1 + Math.pow(10, (g.bot.elo - P.rating) / 400)); delta = Math.round(32 * (score - exp)); P.rating = Math.max(100, P.rating + delta); }
     g.rating = { delta, rated };
+    if (g.bot.adaptive && rated) adaptUpdate(g, win, draw);
+    bumpDay('games');
     entry = { d: Date.now(), bot: g.bot.name, elo: g.bot.elo, color: S.user, res: win ? 'W' : draw ? 'D' : 'L', acc: null, rating: Math.round(P.rating), n: S.moves.length, reason: st.reason, start: S.start, mv: S.moves.join(' '), bi: BOTS.indexOf(g.bot) };
     P.games.unshift(entry); P.games = P.games.slice(0, 60); saveP();
   }
@@ -1997,6 +2159,7 @@ async function finishGame(st) {
   g.summary = Object.assign({ acc: acc == null ? 100 : acc, accOpp: accOpp == null ? 100 : accOpp, counts }, g.rating || {});
   g.progress = null;
   g.newMist = addMistakes(g);
+  afterAnalysis(g, entry);
   if (entry) { entry.acc = Math.round(g.summary.acc); saveP(); }
   render();
 }
@@ -2014,7 +2177,7 @@ function undoMove() {
   if (S.c.turn !== S.user) botMove(); else userTurnPrep();
 }
 function retryFrom(ply) { // volver a la posición antes de la jugada ply
-  const g = S.game; if (!g) return;
+  const g = S.game; if (!g) return; S.var = null;
   if (g.over) { g.over = false; g.result = null; g.summary = null; g.review = false; stopAuto(); }
   for (const k in S.rec) if (S.rec[k].rival) delete S.rec[k];
   truncate(ply); g.undo++; if (!g.imported) clockStart();
@@ -2152,7 +2315,8 @@ function coachBubble(title, key, lines, extra, acts) {
 }
 function head(title, back) { return `<div class="ph">${back ? `<button class="back" data-act="${back}" aria-label="Volver">‹</button>` : ''}<h2>${title}</h2></div>`; }
 function renderPanel() {
-  let h = '';
+  let h = typeof panelHook === 'function' ? panelHook() : '';
+  if (h) { panel.innerHTML = h; return; }
   if (S.mode === 'game') h = gamePanel();
   else if (S.mode === 'menu' && S.screen === 'play' && S.sub === 'import') h = importPanel();
   else if (S.mode === 'opening') h = openingPanel();
@@ -2169,7 +2333,7 @@ function playMenu() {
   const rec = BOTS.findIndex(b => b.elo > P.rating);
   const cu = P.current;
   return head('Jugar contra la computadora') + `<div class="pbody">
-    ${cu ? `<div class="resume"><div><b>Partida sin terminar</b><span>Contra ${(BOTS[cu.botIdx] || BOTS[2]).name} · ${Math.ceil((cu.moves ? cu.moves.split(' ').length : 0) / 2)} jugadas</span></div><button class="btn sm go2" data-act="resume">Continuar</button><button class="btn sm" data-act="discard">Descartar</button></div>` : ''}
+    ${cu ? `<div class="resume"><div><b>Partida sin terminar</b><span>Contra ${cu.adaptive ? "Sparring" : (BOTS[cu.botIdx] || BOTS[2]).name} · ${Math.ceil((cu.moves ? cu.moves.split(' ').length : 0) / 2)} jugadas</span></div><button class="btn sm go2" data-act="resume">Continuar</button><button class="btn sm" data-act="discard">Descartar</button></div>` : ''}
     <button class="card" data-act="import"><div class="ci">⇪</div><div class="ct2"><b>Analizar una partida de chess.com</b><span>Pegá el PGN y el entrenador te la revisa jugada por jugada.</span></div></button>
     <div class="lbl">Elegí rival</div>
     <div class="bots">${BOTS.map((b, k) => `<button class="bot${k === P.botIdx ? ' on' : ''}" data-bot="${k}"><div class="av" style="background:${AVC[k % AVC.length]}">${b.name[0]}</div><div class="bt"><b>${b.name}${k === rec ? ' <span class="tag" style="margin:0 0 0 6px;background:#45753c;color:#fff">Recomendado</span>' : ''}</b><span>${b.desc}</span></div><div class="elo">${b.elo}</div></button>`).join('')}</div>
@@ -2275,6 +2439,7 @@ function evalGraph() {
   return `<div class="chart" style="padding:0;overflow:hidden;cursor:pointer" id="evg" title="Tocá para ir a esa jugada"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Gráfico de evaluación de la partida" style="height:90px;width:100%"><rect width="${W}" height="${H}" fill="#3a3835"/><polygon points="0,${H} ${pts} ${W},${H}" fill="#f2f2f0"/><line x1="0" x2="${W}" y1="${mid}" y2="${mid}" stroke="#8b8987" stroke-width=".6" stroke-dasharray="3 3"/><line x1="${cx}" x2="${cx}" y1="0" y2="${H}" stroke="#81b64c" stroke-width="2"/>${dots}</svg></div>`;
 }
 function reviewPanel() {
+  if (S.var) return varPanel();
   const g = S.game, sm = g.summary, v = S.view;
   let bub;
   if (v <= g.startPly) {
@@ -2291,8 +2456,8 @@ function reviewPanel() {
     else {
       const bad = ['inacc', 'mistake', 'blunder'].includes(r.key);
       let acts = '';
-      if (mine && bad && r.bestUci) acts = `<button data-act="best" data-ply="${v - 1}">Ver la mejor</button><button data-act="retry" data-ply="${v - 1}">Reintentar desde acá</button>`;
-      if (!mine && bad && r.refUci) acts = `<button data-act="punish" data-ply="${v - 1}">Ver cómo castigarlo</button>`;
+      if (mine && bad && r.bestUci) acts = `<button data-act="best" data-ply="${v - 1}">Ver la mejor</button>${r.bestPv && r.bestPv.length > 1 ? `<button data-act="var" data-k="best" data-ply="${v - 1}">Ver la línea</button>` : ''}<button data-act="retry" data-ply="${v - 1}">Reintentar desde acá</button>`;
+      if (!mine && bad && r.refUci) acts = `<button data-act="punish" data-ply="${v - 1}">Ver cómo castigarlo</button>${r.refPv && r.refPv.length > 1 ? `<button data-act="var" data-k="punish" data-ply="${v - 1}">Ver la línea</button>` : ''}`;
       bub = coachBubble(`${moveLabel(v - 1)} ${r.san} · ${CLS[r.key].label}`, r.key, [`<span style="color:#6b6a67;font-weight:700">${who}</span>`, ...r.lines], '', acts);
     }
   }
@@ -2435,12 +2600,13 @@ document.addEventListener('click', e => {
   const g = e.target.closest('[data-go]'); if (g) { go(g.dataset.go); return; }
   const nb = e.target.closest('[data-nav]');
   if (nb) {
+    if (S.var) { varNav(nb.dataset.nav); return; }
     const n = S.moves.length, a = nb.dataset.nav;
     S.view = a === 'first' ? 0 : a === 'prev' ? Math.max(0, S.view - 1) : a === 'next' ? Math.min(n, S.view + 1) : n;
     if (e.isTrusted) stopAuto(); S.arrows = []; S.sel = -1; render(); return;
   }
-  const evg = e.target.closest('#evg'); if (evg && S.game && S.game.evals) { stopAuto(); const r = evg.getBoundingClientRect(); S.view = Math.max(0, Math.min(S.moves.length, Math.round((e.clientX - r.left) / r.width * (S.game.evals.length - 1)))); S.arrows = []; render(); return; }
-  const mv = e.target.closest('[data-ply].mv'); if (mv) { stopAuto(); S.view = +mv.dataset.ply + 1; S.arrows = []; render(); return; }
+  const evg = e.target.closest('#evg'); if (evg && S.game && S.game.evals) { stopAuto(); S.var = null; const r = evg.getBoundingClientRect(); S.view = Math.max(0, Math.min(S.moves.length, Math.round((e.clientX - r.left) / r.width * (S.game.evals.length - 1)))); S.arrows = []; render(); return; }
+  const mv = e.target.closest('[data-ply].mv'); if (mv) { stopAuto(); S.var = null; S.view = +mv.dataset.ply + 1; S.arrows = []; render(); return; }
   const bt = e.target.closest('[data-bot]'); if (bt) { P.botIdx = +bt.dataset.bot; saveP(); render(); return; }
   const sd = e.target.closest('[data-snd]'); if (sd) { P.soundSet = sd.dataset.snd; if (!P.sound) P.sound = true; saveP(); renderPanel(); thock(0); setTimeout(() => sound({ c: 'p' }), 450); return; }
   const bd = e.target.closest('[data-board]'); if (bd) { P.board = bd.dataset.board; saveP(); applyBoardTheme(); render(); return; }
@@ -2461,20 +2627,20 @@ document.addEventListener('click', e => {
     case 'tcoach': P.coach = !P.coach; saveP(); renderPanel(); break;
     case 'tlegal': P.legal = !P.legal; saveP(); renderPanel(); break;
     case 'tsound': P.sound = !P.sound; saveP(); renderPanel(); if (P.sound) tone(440, 0.1); break;
-    case 'start': S.saved = null; startGame({ bot: BOTS[P.botIdx], color: P.color, coach: P.coach, guided: P.guided, tc: P.tc }); break;
+    case 'start': S.saved = null; startGame({ bot: curBot(), color: P.color, coach: P.coach, guided: P.guided, tc: P.tc }); break;
     case 'plan': showPlan(); break;
     case 'hint': hint(); break;
     case 'undo': undoMove(); break;
     case 'flip': S.orient = S.orient === 'w' ? 'b' : 'w'; render(); break;
     case 'resign': resign(); break;
     case 'newgame': stopAuto(); S.saved = null; toMenu(); break;
-    case 'rematch': stopAuto(); startGame({ bot: S.game.bot, color: S.user === 'w' ? 'b' : 'w', coach: S.game.coach, guided: S.game.guided, tc: S.game.tc }); break;
+    case 'rematch': stopAuto(); startGame({ bot: S.game.bot.adaptive ? adaptBot() : S.game.bot, color: S.user === 'w' ? 'b' : 'w', coach: S.game.coach, guided: S.game.guided, tc: S.game.tc }); break;
     case 'best': stopAuto(); showBest(ply); break;
     case 'retry': retryFrom(ply); break;
     case 'review': S.view = ply + 1; S.arrows = S.rec[ply].bestUci && S.rec[ply].key !== 'brilliant' ? [{ f: sqIdx(S.rec[ply].bestUci.slice(0, 2)), t: sqIdx(S.rec[ply].bestUci.slice(2, 4)), color: COL.best }] : []; S.view = ply + 1; render(); break;
     case 'menu': stopAuto(); toMenu(); break;
     case 'review-start': S.game.review = true; S.view = S.game.startPly; S.arrows = []; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
-    case 'review-end': stopAuto(); S.game.review = false; S.view = S.moves.length; S.arrows = []; render(); break;
+    case 'review-end': stopAuto(); S.var = null; S.game.review = false; S.view = S.moves.length; S.arrows = []; render(); break;
     case 'auto': toggleAuto(); break;
     case 'punish': { stopAuto(); const r = S.rec[ply]; S.view = ply + 1; S.arrows = [{ f: sqIdx(r.refUci.slice(0, 2)), t: sqIdx(r.refUci.slice(2, 4)), color: COL.best }]; render(); break; }
     case 'reopen': startOpening(S.lesson.o); break;
@@ -2554,12 +2720,12 @@ function renderClocks() {
 function saveCurrent() {
   const g = S.game;
   if (S.mode !== 'game' || !g || g.over || g.end || g.imported) return;
-  P.current = { start: S.start, moves: S.moves.join(' '), user: S.user, botIdx: BOTS.indexOf(g.bot), coach: g.coach, guided: g.guided, tc: g.tc, clock: g.clock ? { w: g.clock.w, b: g.clock.b } : null, undo: g.undo, d: Date.now() };
+  P.current = { start: S.start, moves: S.moves.join(' '), user: S.user, botIdx: BOTS.indexOf(g.bot), adaptive: !!g.bot.adaptive, aElo: g.bot.elo, coach: g.coach, guided: g.guided, tc: g.tc, clock: g.clock ? { w: g.clock.w, b: g.clock.b } : null, undo: g.undo, d: Date.now() };
   saveP();
 }
 function resumeCurrent() {
   const cu = P.current; if (!cu) return;
-  startGame({ bot: BOTS[cu.botIdx] || BOTS[2], color: cu.user, fen: cu.start, moves: cu.moves ? cu.moves.split(' ').filter(Boolean) : [], coach: cu.coach, guided: cu.guided, tc: cu.tc, clockState: cu.clock, startPly: 0, undo: cu.undo });
+  startGame({ bot: cu.adaptive ? adaptBot(cu.aElo) : (BOTS[cu.botIdx] || BOTS[2]), color: cu.user, fen: cu.start, moves: cu.moves ? cu.moves.split(' ').filter(Boolean) : [], coach: cu.coach, guided: cu.guided, tc: cu.tc, clockState: cu.clock, startPly: 0, undo: cu.undo });
 }
 
 // ---------- PGN ----------
@@ -2786,8 +2952,637 @@ function handleExtraAct(act, el, e) {
   }
   return false;
 }
+
+// ================= FUNCIONES NUEVAS (2) =================
+const HANG = (typeof HANG_BANK !== 'undefined' ? HANG_BANK : []);
+const defaultsV3 = { adapt: null, rep: { w: null, e4: null, d4: null }, repSR: {}, day: null, planDays: 0, ext: [], ach: {}, rushBest: {}, coordsBest: {}, hangBest: null, course: {}, vibrate: true, mastered: 0, bestStreak: 0 };
+for (const k in defaultsV3) if (P[k] === undefined) P[k] = JSON.parse(JSON.stringify(defaultsV3[k]));
+if (!P.adapt) P.adapt = { elo: Math.round(Math.max(600, Math.min(1400, P.rating || 800))) };
+const _loadP = loadP; loadP = function () { const o = _loadP(); for (const k in defaultsV3) if (o[k] === undefined) o[k] = JSON.parse(JSON.stringify(defaultsV3[k])); if (!o.adapt) o.adapt = { elo: Math.round(Math.max(600, Math.min(1400, o.rating || 800))) }; return o; };
+
+// ---------- vibración ----------
+function vib(p) { if (!P.vibrate) return; try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
+const _sound = sound;
+sound = function (m, chk) { _sound(m, chk); vib(chk ? [25, 40, 25] : m && m.c ? 22 : 10); };
+const _clockTick = clockTick;
+clockTick = function () {
+  const g = S.game; const before = g && g.clock ? g.clock[S.user] : null;
+  _clockTick();
+  if (g && g.clock && before > 10000 && g.clock[S.user] <= 10000 && g.clock.run === S.user) { vib([120, 80, 120]); tone(988, 0.12, 'sine', 0.1); }
+};
+
+// ---------- rival a tu medida ----------
+function botFromElo(elo) {
+  elo = Math.max(BOTS[0].elo, Math.min(BOTS[BOTS.length - 1].elo, elo));
+  let i = 0; while (i < BOTS.length - 2 && BOTS[i + 1].elo < elo) i++;
+  const a = BOTS[i], b = BOTS[i + 1], t = (elo - a.elo) / (b.elo - a.elo), L = (x, y) => x + (y - x) * t;
+  return { depth: Math.round(L(a.depth, b.depth)), temp: L(a.temp, b.temp), blunder: L(a.blunder, b.blunder), time: Math.round(L(a.time, b.time)) };
+}
+function adaptBot(elo) { elo = Math.round(elo || P.adapt.elo); return Object.assign({ name: 'Sparring', elo, desc: 'Se adapta a vos', adaptive: true }, botFromElo(elo)); }
+function curBot() { return P.botIdx === -1 ? adaptBot() : BOTS[P.botIdx] || BOTS[2]; }
+function adaptUpdate(g, win, draw) {
+  const step = draw ? 0 : win ? 60 : -60;
+  P.adapt.elo = Math.max(500, Math.min(2200, Math.round(P.adapt.elo + step)));
+  g.adaptMsg = step ? `El Sparring ${step > 0 ? 'sube' : 'baja'} a ${P.adapt.elo} para la próxima.` : `El Sparring se queda en ${P.adapt.elo}.`;
+}
+
+// ---------- día y plan diario ----------
+function ensureDay() { const t = todayKey(); if (!P.day || P.day.date !== t) P.day = { date: t, games: 0, puzzles: 0, reviews: 0, drills: 0, dueStart: dueMistakes().length, planDone: false }; return P.day; }
+function planTasks() {
+  const d = ensureDay(), t = todayKey();
+  return [
+    { id: 'daily', t: 'Problema del día', done: !!(P.daily && P.daily.date === t), act: 'daily', prog: '' },
+    { id: 'rev', t: d.dueStart ? `Repasar ${Math.min(5, d.dueStart)} errores tuyos` : 'Repasar errores (no tenés pendientes)', done: !d.dueStart || d.reviews >= Math.min(5, d.dueStart), act: 'mreview', prog: d.dueStart ? `${Math.min(d.reviews, 5)}/${Math.min(5, d.dueStart)}` : '' },
+    { id: 'puz', t: '5 problemas a tu nivel', done: d.puzzles >= 5, act: 'bank', prog: `${Math.min(5, d.puzzles)}/5` },
+    { id: 'drill', t: 'Un ejercicio rápido', done: d.drills >= 1, act: 'rush-open', prog: '' },
+    { id: 'game', t: 'Una partida con el Sparring', done: d.games >= 1, act: 'plan-game', prog: '' }
+  ];
+}
+function bumpDay(k) {
+  const d = ensureDay(); d[k] = (d[k] || 0) + 1;
+  if (!d.planDone && planTasks().every(x => x.done)) { d.planDone = true; P.planDays = (P.planDays || 0) + 1; setTimeout(() => { confetti(); toast('¡Plan del día completo!'); }, 400); }
+  saveP(); checkAch();
+}
+function planCard() {
+  const tasks = planTasks(), n = tasks.filter(x => x.done).length;
+  return `<div class="plancard"><div class="ph2"><b>Plan de hoy · 20 minutos</b><span>${n}/${tasks.length}</span></div><div class="prog"><div style="width:${n / tasks.length * 100}%"></div></div>
+    ${tasks.map(x => `<button class="ptask${x.done ? ' ok' : ''}" data-act="${x.act}"${x.id === 'rev' && !dueMistakes().length ? ' disabled' : ''}><i>${x.done ? '✓' : ''}</i><span>${x.t}</span>${x.prog && !x.done ? `<em>${x.prog}</em>` : ''}</button>`).join('')}
+    ${P.planDays ? `<p class="muted" style="margin:6px 0 0;font-size:12.5px">Completaste el plan ${P.planDays} día${P.planDays > 1 ? 's' : ''}.</p>` : ''}</div>`;
+}
+
+// ---------- estadísticas de partida e informe ----------
+const TAGS = {
+  hang: { t: 'Dejar piezas sin defensa', fix: 'hang-open', fixT: '¿Qué está colgado?' },
+  fork: { t: 'Permitir horquillas', fix: 'theme:horquilla', fixT: 'Tema: Horquilla' },
+  mate: { t: 'Permitir jaque mate', fix: 'theme:pasillo', fixT: 'Temas de mate' },
+  lost: { t: 'Perder material en combinaciones', fix: 'bank', fixT: 'Problemas tácticos' },
+  missmate: { t: 'No ver un mate que tenías', fix: 'rush-open', fixT: 'Contrarreloj' },
+  misscap: { t: 'No capturar piezas gratis', fix: 'hang-open', fixT: '¿Qué está colgado?' },
+  misstac: { t: 'No ver tus tácticas', fix: 'bank', fixT: 'Problemas tácticos' },
+  openp: { t: 'Errores de principios de apertura', fix: 'go-openings', fixT: 'Aperturas' },
+  position: { t: 'Errores de plan (sin táctica clara)', fix: 'course-open', fixT: 'Curso de medio juego' }
+};
+const PHN = { o: 'Apertura', m: 'Medio juego', e: 'Final' };
+function computeStats(g) {
+  const st = { ph: { o: [0, 0], m: [0, 0], e: [0, 0] }, tags: {} };
+  for (let i = g.startPly; i < S.moves.length; i++) {
+    const r = S.rec[i]; if (!r || r.rival || r.key === 'book') continue;
+    const pos = new Chess(S.fens[i]), ph = gamePhase(pos);
+    const k = i < 20 && ph > 16 ? 'o' : ph <= 10 ? 'e' : 'm';
+    st.ph[k][0] += accuracyFromLoss(r.accLoss || 0); st.ph[k][1]++;
+    if (['mistake', 'blunder'].includes(r.key)) for (const t of new Set(r.tags || ['position'])) st.tags[t] = (st.tags[t] || 0) + 1;
+  }
+  return st;
+}
+function repLineFor(color, moves) {
+  const R = P.rep || {}; let id = null;
+  if (color === 'w') id = R.w; else if (moves[0] === 'e2e4') id = R.e4; else if (moves[0] === 'd2d4') id = R.d4;
+  return id ? OPENINGS.find(o => o.id === id) : null;
+}
+function repCheck(g) {
+  if (g.startPly !== 0 || S.start !== START_FEN) return null;
+  const o = repLineFor(S.user, S.moves); if (!o) return null;
+  const line = o.steps.map(x => x[0]);
+  for (let k = 0; k < line.length && k < S.moves.length; k++) {
+    if (S.moves[k] === line[k]) continue;
+    const mine = new Chess(S.fens[k]).turn === S.user, c = new Chess(S.fens[k]);
+    const exp = c.findMove(line[k]), expSan = exp ? c.san(exp) : line[k];
+    const n = moveLabel(k);
+    if (mine) {
+      if (!P.mist.some(x => x.fen === S.fens[k])) P.mist.push({ id: 'r' + Date.now().toString(36) + k, fen: S.fens[k], best: line[k], bs: null, played: S.sans[k], bestSan: expSan, opp: `tu repertorio (${o.name})`, lvl: 0, due: Date.now(), d: Date.now() });
+      return { you: true, text: `En la jugada ${n} te saliste de tu repertorio (${o.name}): jugaste ${S.sans[k]} y tu línea dice ${expSan}. Lo agregué a tu repaso de errores.` };
+    }
+    return { you: false, text: `${g.bot.name} se salió de tu repertorio en la jugada ${n} con ${S.sans[k]} (la teoría era ${expSan}). En «Entrenar mi repertorio» practicás qué hacer cuando el rival se sale de la línea.` };
+  }
+  return { ok: true, text: `Seguiste tu repertorio (${o.name}) sin errores mientras duró la teoría.` };
+}
+function afterAnalysis(g, entry) {
+  if (g.end) { checkAch(); return; }
+  const st = computeStats(g), op = S.start === START_FEN ? openingName(S.moves) : 'Posición especial';
+  if (entry) { entry.st = st; entry.op = op; }
+  if (g.imported) {
+    const r = g.result, res = r.r === '*' ? null : r.win ? 'W' : r.draw ? 'D' : 'L';
+    P.ext.unshift({ d: Date.now(), color: S.user, res, acc: Math.round(g.summary.acc), st, op, opp: g.bot.name });
+    P.ext = P.ext.slice(0, 40);
+  }
+  g.repNote = repCheck(g);
+  saveP(); checkAch();
+}
+function reportData() {
+  const all = P.games.filter(x => x.st).map(x => Object.assign({ src: 'app' }, x)).concat(P.ext.map(x => Object.assign({ src: 'cc' }, x))).sort((a, b) => b.d - a.d).slice(0, 30);
+  const ph = { o: [0, 0], m: [0, 0], e: [0, 0] }, tags = {}, ops = {}, col = { w: [0, 0, 0], b: [0, 0, 0] };
+  for (const x of all) {
+    for (const k in ph) { ph[k][0] += x.st.ph[k][0]; ph[k][1] += x.st.ph[k][1]; }
+    for (const t in x.st.tags) tags[t] = (tags[t] || 0) + x.st.tags[t];
+    if (x.res) {
+      const o = ops[x.op] || (ops[x.op] = { n: 0, w: 0, d: 0, l: 0, acc: 0, w8: 0, b8: 0 });
+      o.n++; o[x.res === 'W' ? 'w' : x.res === 'D' ? 'd' : 'l']++; o.acc += x.acc || 0; o[x.color === 'w' ? 'w8' : 'b8']++;
+      col[x.color][x.res === 'W' ? 0 : x.res === 'D' ? 1 : 2]++;
+    }
+  }
+  return { all, ph, tags, ops, col };
+}
+function reportPanel() {
+  const R = reportData(), n = R.all.length;
+  if (n < 3) return head('Tus puntos débiles', 'sub-back') + `<div class="pbody"><div class="empty">Necesito al menos 3 partidas analizadas para armar el informe (tenés ${n}).<br><br>Jugá contra los bots o analizá tus partidas de chess.com desde «Jugar».</div></div>`;
+  const acc = k => R.ph[k][1] ? R.ph[k][0] / R.ph[k][1] : null;
+  const phs = ['o', 'm', 'e'].filter(k => R.ph[k][1] >= 4);
+  const worst = phs.slice().sort((a, b) => acc(a) - acc(b))[0];
+  const tagList = Object.entries(R.tags).sort((a, b) => b[1] - a[1]);
+  const top = tagList[0];
+  const bars = ['o', 'm', 'e'].map(k => { const a = acc(k); return `<div class="rbar"><span>${PHN[k]}</span><div class="rtrack"><div style="width:${a == null ? 0 : a}%;background:${k === worst ? 'var(--bad)' : 'var(--green)'}"></div></div><b>${a == null ? '—' : a.toFixed(0) + '%'}</b></div>`; }).join('');
+  const totalErr = tagList.reduce((s, x) => s + x[1], 0) || 1;
+  const errs = tagList.length ? tagList.slice(0, 6).map(([t, c]) => `<div class="rerr"><div><b>${TAGS[t] ? TAGS[t].t : t}</b><span>${c} ${c === 1 ? 'vez' : 'veces'} · ${Math.round(c / totalErr * 100)}% de tus errores</span></div>${TAGS[t] ? `<button class="btn sm" data-act="${TAGS[t].fix}">${TAGS[t].fixT}</button>` : ''}</div>`).join('') : '<p class="lead">No cometiste errores graves en las partidas analizadas. ¡Muy bien!</p>';
+  let rec = '';
+  if (top) rec = `Lo que más se repite en tus errores: <b>${TAGS[top[0]] ? TAGS[top[0]].t.toLowerCase() : top[0]}</b>. ${top[0] === 'hang' || top[0] === 'misscap' ? 'Antes de cada jugada preguntate: «¿qué piezas mías y del rival están sin defensa?». El ejercicio «¿Qué está colgado?» entrena justo eso.' : top[0] === 'fork' ? 'Antes de mover, fijate a qué casillas pueden saltar los caballos rivales y si atacan dos piezas tuyas.' : top[0] === 'mate' ? 'Revisá siempre los jaques del rival antes de mover, sobre todo con torres y damas cerca de tu rey.' : top[0] === 'openp' ? 'Jugá tu repertorio y respetá las reglas de oro: centro, desarrollo y enroque.' : 'Hacé los problemas tácticos todos los días: con práctica empezás a ver estos patrones solo.'}`;
+  if (worst) rec += ` Tu fase más floja es <b>${PHN[worst].toLowerCase()}</b> (${acc(worst).toFixed(0)}% de precisión).`;
+  const cs = c => { const [w, d, l] = R.col[c], t = w + d + l; return t ? `${Math.round((w + d / 2) / t * 100)}% · ${w}G ${d}E ${l}P` : '—'; };
+  const opsRows = Object.entries(R.ops).sort((a, b) => b[1].n - a[1].n).slice(0, 10);
+  const opsHTML = opsRows.length ? `<div class="otable">${opsRows.map(([name, o]) => { const sc = Math.round((o.w + o.d / 2) / o.n * 100); return `<div class="orow"><div><b>${name}</b><span>${o.n} partida${o.n > 1 ? 's' : ''} · ${o.w8 ? o.w8 + ' con blancas' : ''}${o.w8 && o.b8 ? ', ' : ''}${o.b8 ? o.b8 + ' con negras' : ''}</span></div><div class="wdl"><i style="flex:${o.w || 0.001};background:var(--green)"></i><i style="flex:${o.d || 0.001};background:#8b8987"></i><i style="flex:${o.l || 0.001};background:#c4463a"></i></div><b class="${sc >= 50 ? 'ok' : 'no'}">${sc}%</b></div>`; }).join('')}</div>` : '<p class="muted">Todavía no hay resultados por apertura.</p>';
+  return head('Tus puntos débiles', 'sub-back') + `<div class="pbody">
+    <p class="lead">Basado en tus últimas ${n} partidas analizadas (${R.all.filter(x => x.src === 'cc').length} de chess.com).</p>
+    ${coachBubble('Mi diagnóstico', null, [rec])}
+    <div class="lbl">Precisión por fase</div><div class="rbars">${bars}</div>
+    <div class="lbl">Tus errores más frecuentes</div><div class="rerrs">${errs}</div>
+    <div class="lbl">Resultados por color</div>
+    <div class="stats" style="grid-template-columns:1fr 1fr"><div><b style="font-size:16px">${cs('w')}</b><span>Con blancas</span></div><div><b style="font-size:16px">${cs('b')}</b><span>Con negras</span></div></div>
+    <div class="lbl">Tus aperturas · % de puntos</div>${opsHTML}
+  </div>`;
+}
+
+// ---------- repertorio ----------
+const REP_OPTS = { w: ['italiana', 'ruylopez', 'escocesa', 'londres'], e4: ['carokann', 'siciliana', 'francesa', 'pastor'], d4: ['gdr'] };
+function repBlock() {
+  const sel = (k, label) => `<label class="repsel"><span>${label}</span><select data-rep="${k}"><option value="">— Elegir —</option>${REP_OPTS[k].map(id => { const o = OPENINGS.find(x => x.id === id); return `<option value="${id}"${P.rep[k] === id ? ' selected' : ''}>${o.name}</option>`; }).join('')}</select></label>`;
+  const ids = [P.rep.w, P.rep.e4, P.rep.d4].filter(Boolean), now = Date.now();
+  const due = ids.filter(id => !P.repSR[id] || P.repSR[id].due <= now).length;
+  return `<div class="repbox"><div class="ph2"><b>Mi repertorio</b>${ids.length ? `<span>${due ? due + ' para repasar' : 'al día'}</span>` : ''}</div>
+    <p class="muted" style="margin:0;font-size:13px">Elegí qué jugás. En tus partidas te aviso si te salís de la línea, y al entrenar el rival a veces se sale de la teoría para que practiques qué hacer.</p>
+    ${sel('w', 'Con blancas')}${sel('e4', 'Con negras contra 1.e4')}${sel('d4', 'Con negras contra 1.d4')}
+    <button class="btn go2" data-act="rep-drill"${ids.length ? '' : ' disabled'} style="width:100%">Entrenar mi repertorio</button></div>`;
+}
+document.addEventListener('change', e => { const s = e.target.closest('[data-rep]'); if (!s) return; P.rep[s.dataset.rep] = s.value || null; saveP(); renderPanel(); });
+function startRepDrill() {
+  const ids = [P.rep.w, P.rep.e4, P.rep.d4].filter(Boolean); if (!ids.length) return;
+  ids.sort((a, b) => ((P.repSR[a] || {}).due || 0) - ((P.repSR[b] || {}).due || 0));
+  const o = OPENINGS.find(x => x.id === ids[0]);
+  S.screen = 'openings'; startOpening(o);
+  const L = S.lesson; L.drill = true; L.msg = { kind: 'intro', text: 'Repaso de tu repertorio: jugá la línea de memoria. En algún momento el rival se puede salir de la teoría y vas a tener que encontrar una buena respuesta.' };
+  renderPanel();
+}
+const _lessonStep = lessonStep;
+lessonStep = function () {
+  const L = S.lesson;
+  if (L && L.drill && L.off) { renderPanel(); return; }
+  if (L && L.drill && !L.devDone && L.i >= 4 && L.i < L.o.steps.length && S.c.turn !== S.user && Math.random() < 0.45) { deviate(L); return; }
+  _lessonStep();
+  if (L && L.drill && L.done && !L.srDone) repSR(L);
+};
+async function deviate(L) {
+  S.busy = true; render();
+  const lineU = L.o.steps[L.i][0];
+  const list = await ask({ mode: 'root', fen: S.start, moves: S.moves.slice(), depth: 3 });
+  await delay(700);
+  if (S.lesson !== L) return;
+  const best = list && list.length ? list[0].score : 0;
+  const cands = (list || []).filter(x => x.uci !== lineU && x.score >= best - 60).slice(0, 3);
+  if (!cands.length) { S.busy = false; L.devDone = true; _lessonStep(); return; }
+  const pick = cands[Math.floor(Math.random() * cands.length)];
+  pushMove(S.c.findMove(pick.uci)); S.busy = false;
+  L.devDone = true; L.off = 3;
+  L.msg = { kind: 'dev', san: S.sans[S.sans.length - 1], text: `El rival se salió de la teoría con ${S.sans[S.sans.length - 1]} (lo de tu línea era otra jugada). Ahora no hay libro: buscá una buena jugada pensando en centro, desarrollo y seguridad del rey. Te evalúo las próximas 3.` };
+  render();
+}
+const _openingUserMove = openingUserMove;
+openingUserMove = function (m) { const L = S.lesson; if (L.drill && L.off) return drillOffMove(m); return _openingUserMove(m); };
+async function drillOffMove(m) {
+  const L = S.lesson, u = S.c.uci(m);
+  S.busy = true; L.msg = { kind: 'think', text: 'Evaluando tu jugada…' }; renderPanel();
+  const A = await ask({ mode: 'think', fen: S.c.fen(), moves: [], depth: 7, time: 450 });
+  const B = await ask({ mode: 'think', fen: S.c.fen(), moves: [u], depth: 7, time: 450 });
+  if (S.lesson !== L) return;
+  S.busy = false;
+  const loss = A && B ? A.score - (-B.score) : 0;
+  if ((A && A.uci === u) || loss <= 80) {
+    const san = S.c.san(m); pushMove(m); L.off--; L.wrong = 0; S.arrows = []; S.hintSq = -1;
+    if (L.off <= 0) { L.done = true; L.devOK = true; L.msg = { kind: 'ok', san, text: 'Bien: mantuviste una buena posición aunque el rival se salió de la teoría.' }; repSR(L); sGood(); render(); return; }
+    L.msg = { kind: 'ok', san, text: `Buena respuesta${A && A.uci === u ? ': es la mejor' : ''}.` }; render();
+    S.busy = true;
+    await delay(650);
+    if (S.lesson !== L) return;
+    const r = B && B.uci ? B.uci : null;
+    if (r && S.c.findMove(r)) { pushMove(S.c.findMove(r)); L.msg = { kind: 'opp', san: S.sans[S.sans.length - 1], text: `Faltan ${L.off} jugada${L.off > 1 ? 's' : ''}.` }; }
+    S.busy = false; render();
+  } else {
+    L.wrong++; L.anyWrong = true; sBad();
+    const bm = A && A.uci ? S.c.findMove(A.uci) : null;
+    if (L.wrong === 1 && bm) { S.hintSq = bm.f; L.msg = { kind: 'no', text: `${S.c.san(m)} empeora tu posición (pierde ${(loss / 100).toFixed(1)}). Pista: mirá ${PIECE_AT(bm.p, bm.f, 'tu')}.` }; }
+    else if (bm) { S.arrows = [{ f: bm.f, t: bm.t, color: COL.hint }]; L.msg = { kind: 'no', text: `Una buena jugada es ${S.c.san(bm)}.` }; }
+    renderBoard(); renderPanel();
+  }
+}
+function repSR(L) {
+  L.srDone = true;
+  const id = L.o.id, x = P.repSR[id] || (P.repSR[id] = { lvl: 0, due: 0 });
+  if (!L.anyWrong && !L.hinted) { x.lvl = Math.min(INTERVALS.length, x.lvl + 1); x.due = Date.now() + INTERVALS[x.lvl - 1] * DAY; L.next = INTERVALS[x.lvl - 1]; }
+  else { x.lvl = 0; x.due = Date.now() + DAY; L.next = 1; }
+  saveP();
+}
+const _openingPanel = openingPanel;
+openingPanel = function () {
+  const L = S.lesson;
+  if (L.drill && L.done) return head(`Repaso: ${L.o.name}`, 'menu') + `<div class="pbody">${coachBubble(L.anyWrong || L.hinted ? 'Repaso terminado con ayuda' : '¡Repaso perfecto!', L.anyWrong || L.hinted ? 'inacc' : 'best', [L.devOK ? 'Respondiste bien cuando el rival se salió de la teoría.' : 'Jugaste la línea completa.', `Esta línea vuelve a aparecer en ${L.next} día${L.next > 1 ? 's' : ''}.`])}${movesHTML()}</div><div class="pfoot"><button class="btn sm f1" data-act="rep-drill">Otra línea</button><button class="btn sm f1" data-act="menu">Volver</button></div>`;
+  let h = _openingPanel();
+  if (L.drill) h = h.replace(`<h2>${L.o.name}</h2>`, `<h2>Repaso: ${L.o.name}</h2>`);
+  if (L.msg && L.msg.kind === 'dev') h = h.replace(/<div class="coach">[\s\S]*?<\/div><\/div><\/div>/, coachBubble(`El rival juega ${L.msg.san}`, 'inacc', [L.msg.text]));
+  if (L.msg && L.msg.kind === 'think') h = h.replace(/<div class="coach">[\s\S]*?<\/div><\/div><\/div>/, coachBubble('Evaluando…', null, []));
+  return h;
+};
+
+// ---------- contrarreloj ----------
+let drillT = null;
+function stopDrills() { if (drillT) { clearInterval(drillT); drillT = null; } board.classList.remove('nocoords'); }
+function rushQueue() {
+  const b = BANK.slice().sort((a, c) => a.rating - c.rating), q = [];
+  for (let i = 0; i < b.length; i += 6) { const ch = b.slice(i, i + 6).sort(() => Math.random() - 0.5); q.push(...ch); }
+  return q;
+}
+function startRush(dur) {
+  stopDrills(); S.screen = 'tactics';
+  S.rush = { dur, end: Date.now() + dur * 1000, lives: 3, score: 0, q: rushQueue(), qi: 0, active: true, fails: [] };
+  loadRushPuzzle();
+  drillT = setInterval(() => { const el = $('#rushT'); const left = Math.max(0, S.rush.end - Date.now()); if (el) el.textContent = fmtClock(left); if (left <= 0) rushEnd(); }, 200);
+}
+function loadRushPuzzle() {
+  const R = S.rush, p = R.q[R.qi % R.q.length]; R.qi++;
+  S.mode = 'puzzle'; S.puzzle = { t: { id: 'rush', kind: 'rush', name: 'Contrarreloj', puzzles: [p] }, k: 0 }; loadPuzzle();
+}
+async function rushMove(m) {
+  const R = S.rush, Z = S.puzzle, p = Z.t.puzzles[0], u = S.c.uci(m), exp = p.sol[Z.step];
+  let ok = u === exp; if (!ok) { S.c.make(m); ok = S.c.inCheck() && !S.c.moves().length; S.c.unmake(); }
+  if (!ok) {
+    R.lives--; R.fails.push(p); sBad(); vib([60, 40, 60]);
+    if (R.lives <= 0) { rushEnd(); return; }
+    loadRushPuzzle(); return;
+  }
+  pushMove(m); Z.step++;
+  if (Z.step >= p.sol.length || (S.c.inCheck() && !S.c.moves().length)) { R.score++; tone(880, 0.07, 'sine', 0.12); render(); setTimeout(() => { if (S.rush === R && R.active) loadRushPuzzle(); }, 260); return; }
+  if (p.sol[Z.step] === '*') {
+    S.busy = true; render();
+    const r = await ask({ mode: 'think', fen: S.start, moves: S.moves.slice(), depth: 4, time: 200 });
+    if (S.rush !== R || !R.active || S.puzzle !== Z) return;
+    pushMove(S.c.findMove(r.uci)); Z.step++; S.busy = false; render();
+  }
+}
+function rushEnd() {
+  const R = S.rush; if (!R || !R.active) return;
+  R.active = false; stopDrills();
+  const k = String(R.dur), rec = !P.rushBest[k] || R.score > P.rushBest[k];
+  if (rec) P.rushBest[k] = R.score;
+  R.record = rec && R.score > 0;
+  saveP(); bumpDay('drills');
+  toMenu(); S.screen = 'tactics'; S.sub = 'rushEnd'; render();
+  if (R.record) confetti();
+}
+function rushPanel() {
+  const R = S.rush;
+  return head('Contrarreloj', 'drill-quit') + `<div class="pbody">
+    <div class="drillhud"><div><b id="rushT">${fmtClock(R.end - Date.now())}</b><span>Tiempo</span></div><div><b>${R.score}</b><span>Resueltos</span></div><div><b class="lives">${'♥'.repeat(R.lives)}<s>${'♥'.repeat(3 - R.lives)}</s></b><span>Vidas</span></div></div>
+    ${coachBubble(`Juegan las ${S.user === 'w' ? 'blancas' : 'negras'}`, null, ['Encontrá la mejor jugada. Si te equivocás perdés una vida y pasás al siguiente.'])}
+  </div>`;
+}
+function rushStartPanel() {
+  return head('Contrarreloj', 'sub-back') + `<div class="pbody">
+    <p class="lead">Resolvé la mayor cantidad de problemas antes de que se termine el tiempo. Empiezan fáciles y se ponen más difíciles. Tenés 3 vidas.</p>
+    <div class="cards">${[[180, '3 minutos'], [300, '5 minutos']].map(([d, t]) => `<button class="card" data-rush="${d}"><div class="ci">⏱</div><div class="ct2"><b>${t}</b><span>Récord: ${P.rushBest[d] != null ? P.rushBest[d] : '—'}</span></div></button>`).join('')}</div>
+  </div>`;
+}
+function rushEndPanel() {
+  const R = S.rush;
+  return head('Contrarreloj', 'sub-back') + `<div class="pbody">
+    <div class="result"><h3 style="color:var(--green)">${R.score} resuelto${R.score === 1 ? '' : 's'}</h3><p>${R.record ? '¡Nuevo récord!' : `Récord: ${P.rushBest[R.dur]}`} · ${R.lives <= 0 ? 'Sin vidas' : 'Se terminó el tiempo'}</p></div>
+    ${R.fails.length ? `<div class="lbl">Los que fallaste · tocá para resolverlos con calma</div><div class="keylist">${R.fails.map((p, i) => `<button class="keym" data-rfail="${i}"><i style="background:${CLS.mistake.color}">?</i><span><b>${p.theme}</b> · rating ${p.rating}</span></button>`).join('')}</div>` : ''}
+  </div><div class="pfoot"><button class="btn sm f1 go2" data-rush="${R.dur}">Otra vez</button><button class="btn sm f1" data-act="sub-back">Volver</button></div>`;
+}
+
+// ---------- coordenadas ----------
+function startCoords(color) {
+  stopDrills(); S.screen = 'tactics';
+  const c = color === 'r' ? (Math.random() < 0.5 ? 'w' : 'b') : color;
+  resetBoard(START_FEN, []); S.mode = 'coords'; S.orient = c; S.user = c;
+  S.co = { end: Date.now() + 30000, score: 0, miss: 0, target: Math.floor(Math.random() * 64), active: true, color: c, flash: null };
+  board.classList.add('nocoords'); render();
+  drillT = setInterval(() => { const left = Math.max(0, S.co.end - Date.now()); const el = $('#coT'); if (el) el.textContent = (left / 1000).toFixed(1); if (left <= 0) coordsEnd(); }, 100);
+}
+function coordsEnd() {
+  const C = S.co; if (!C.active) return; C.active = false; stopDrills();
+  const rec = !P.coordsBest[C.color] || C.score > P.coordsBest[C.color]; if (rec) P.coordsBest[C.color] = C.score;
+  C.record = rec && C.score > 0; saveP(); bumpDay('drills'); render(); if (C.record) confetti();
+}
+function coordsDecorate() {
+  const C = S.co; if (!C) return;
+  if (C.flash) { const el = board.querySelector(`.sq[data-sq="${C.flash.s}"]`); if (el) el.classList.add(C.flash.ok ? 'fok' : 'fbad'); }
+  if (C.active) { const d = document.createElement('div'); d.className = 'coordq'; d.textContent = sqName(C.target); board.appendChild(d); }
+}
+function coordsTap(e) {
+  const C = S.co; if (!C || !C.active) return;
+  const s = squareAt(e.clientX, e.clientY); if (s < 0) return;
+  const ok = s === C.target;
+  if (ok) { C.score++; tone(880, 0.05, 'sine', 0.1); vib(8); let n; do { n = Math.floor(Math.random() * 64); } while (n === C.target); C.target = n; }
+  else { C.miss++; vib(40); tone(220, 0.08, 'sine', 0.1); }
+  C.flash = { s, ok }; renderBoard(); renderPanel();
+  setTimeout(() => { if (S.co === C && C.flash && C.flash.s === s) { C.flash = null; renderBoard(); } }, 260);
+}
+function coordsPanel() {
+  const C = S.co;
+  if (C.active) return head('Coordenadas', 'drill-quit') + `<div class="pbody"><div class="drillhud"><div><b id="coT">${((C.end - Date.now()) / 1000).toFixed(1)}</b><span>Segundos</span></div><div><b>${C.score}</b><span>Aciertos</span></div><div><b>${C.miss}</b><span>Errores</span></div></div><p class="lead">Tocá en el tablero la casilla <b>${sqName(C.target)}</b>. Jugás con ${C.color === 'w' ? 'blancas' : 'negras'} abajo.</p></div>`;
+  return head('Coordenadas', 'sub-back') + `<div class="pbody"><div class="result"><h3 style="color:var(--green)">${C.score} en 30 segundos</h3><p>${C.record ? '¡Nuevo récord!' : `Récord: ${P.coordsBest[C.color] || 0}`} · ${C.miss} error${C.miss === 1 ? '' : 'es'}</p></div>
+    <p class="lead">Saber las coordenadas sin pensar te ayuda a leer partidas, seguir explicaciones y calcular más rápido.</p></div>
+    <div class="pfoot"><button class="btn sm f1 go2" data-coords="${C.color}">Otra vez</button><button class="btn sm f1" data-act="sub-back">Volver</button></div>`;
+}
+function coordsStartPanel() {
+  return head('Coordenadas', 'sub-back') + `<div class="pbody"><p class="lead">Aparece el nombre de una casilla y tenés que tocarla lo más rápido posible. Tenés 30 segundos.</p>
+    <div class="cards">${[['w', 'Con blancas abajo'], ['b', 'Con negras abajo'], ['r', 'Al azar']].map(([c, t]) => `<button class="card" data-coords="${c}"><div class="ci">${c === 'w' ? glyph('K') : c === 'b' ? glyph('k') : '?'}</div><div class="ct2"><b>${t}</b><span>${c !== 'r' ? 'Récord: ' + (P.coordsBest[c] || '—') : 'Cambia la orientación'}</span></div></button>`).join('')}</div></div>`;
+}
+
+// ---------- ¿qué está colgado? ----------
+function startHang() {
+  stopDrills(); S.screen = 'tactics';
+  if (!HANG.length) return;
+  const list = HANG.slice().sort(() => Math.random() - 0.5).slice(0, 8);
+  S.hg = { list, i: 0, perfect: 0, wrongTotal: 0, t0: Date.now(), done: false };
+  loadHang();
+}
+function loadHang() {
+  const H = S.hg, p = H.list[H.i];
+  resetBoard(p.fen, []); S.mode = 'hang'; S.orient = 'w'; S.user = new Chess(p.fen).turn;
+  H.found = []; H.wrong = 0; H.bad = null; H.solved = false; H.revealed = false;
+  render();
+}
+function hangDecorate() {
+  const H = S.hg; if (!H) return;
+  for (const s of H.found) { const el = board.querySelector(`.sq[data-sq="${s}"]`); if (el) el.classList.add('fok2'); }
+  if (H.bad != null) { const el = board.querySelector(`.sq[data-sq="${H.bad}"]`); if (el) el.classList.add('fbad'); }
+}
+function hangTap(e) {
+  const H = S.hg; if (!H || H.solved) return;
+  const s = squareAt(e.clientX, e.clientY); if (s < 0) return;
+  const p = H.list[H.i], c = S.c;
+  if (!c.b[s] || H.found.includes(s)) return;
+  if (p.sq.includes(s)) { H.found.push(s); tone(784, 0.06, 'sine', 0.1); vib(10); }
+  else { H.wrong++; H.wrongTotal++; H.bad = s; sBad(); vib(40); setTimeout(() => { if (S.hg === H && H.bad === s) { H.bad = null; renderBoard(); } }, 500); }
+  if (H.found.length === p.sq.length) { H.solved = true; if (!H.wrong) H.perfect++; sGood(); }
+  renderBoard(); renderPanel();
+}
+function hangExplain(p) {
+  const c = new Chess(p.fen);
+  return p.sq.map(s => {
+    const pc = c.b[s], w = isW(pc), att = c.attackers(s, !w), def = c.attackers(s, w);
+    const a = att.map(x => c.b[x]).sort((x, y) => VAL[x.toUpperCase()] - VAL[y.toUpperCase()])[0];
+    const fem = ['R', 'Q'].includes(pc.toUpperCase()), lo = fem ? 'la' : 'lo';
+    const who = `${pname(pc, 'el')} ${w ? (fem ? 'blanca' : 'blanco') : (fem ? 'negra' : 'negro')} de ${sqName(s)}`;
+    return def.length ? `${cap(who)}: ${lo} ataca ${pname(a, 'un')}, que vale menos. Aunque esté defendid${fem ? 'a' : 'o'}, el cambio le conviene al rival.` : `${cap(who)}: ${lo} ataca ${pname(a, 'un')} y nadie ${lo} defiende.`;
+  });
+}
+function hangPanel() {
+  const H = S.hg, p = H.list[H.i];
+  if (H.done) return head('¿Qué está colgado?', 'sub-back') + `<div class="pbody"><div class="result"><h3 style="color:var(--green)">${H.perfect}/${H.list.length} perfectas</h3><p>${H.wrongTotal} toque${H.wrongTotal === 1 ? '' : 's'} equivocado${H.wrongTotal === 1 ? '' : 's'} · ${Math.round((Date.now() - H.t0) / 1000)} s${H.record ? ' · ¡Récord!' : ''}</p></div><p class="lead">Hacé esta revisión en tus partidas antes de cada jugada: ¿qué piezas mías y del rival están sin defensa?</p></div><div class="pfoot"><button class="btn sm f1 go2" data-act="hang-start">Otra ronda</button><button class="btn sm f1" data-act="sub-back">Volver</button></div>`;
+  const n = p.sq.length;
+  const body = H.solved
+    ? coachBubble(H.wrong ? 'Encontradas' : '¡Perfecto!', H.wrong ? 'inacc' : 'best', hangExplain(p))
+    : coachBubble(`Posición ${H.i + 1} de ${H.list.length}`, null, [`Tocá las piezas que se pueden perder: atacadas y sin defensa suficiente, <b>de los dos colores</b>. Hay <b>${n}</b>. Encontraste ${H.found.length}.`, `Juegan las ${S.user === 'w' ? 'blancas' : 'negras'}.`]);
+  return head('¿Qué está colgado?', 'drill-quit') + `<div class="pbody">${body}</div><div class="pfoot">${H.solved ? `<button class="btn sm f1 go2" data-act="hang-next">${H.i + 1 < H.list.length ? 'Siguiente' : 'Ver resultado'}</button>` : '<button class="btn sm f1" data-act="hang-reveal">Mostrar</button>'}</div>`;
+}
+
+// ---------- curso de medio juego ----------
+function startCourse(lid, k) {
+  const L = COURSE.find(x => x.id === lid); if (!L) return;
+  S.screen = 'tactics';
+  S.mode = 'puzzle'; S.puzzle = { t: { id: 'course', kind: 'course', name: L.name, lesson: L, puzzles: L.tasks.map(t => Object.assign({ sol: [t.ok[0]] }, t)) }, k: k || 0 };
+  loadPuzzle();
+  S.puzzle.msg = { kind: 'intro', text: `Juegan las ${S.user === 'w' ? 'blancas' : 'negras'}. Aplicá la idea de la lección.` }; renderPanel();
+}
+async function courseMove(m) {
+  const Z = S.puzzle, p = Z.t.puzzles[Z.k], u = S.c.uci(m), L = Z.t.lesson;
+  let ok = p.ok.includes(u), alt = false;
+  if (!ok) {
+    S.busy = true; Z.msg = { kind: 'intro', text: 'Evaluando tu jugada…' }; renderPanel();
+    const A = await ask({ mode: 'think', fen: S.c.fen(), moves: [], depth: 7, time: 500 });
+    const B = await ask({ mode: 'think', fen: S.c.fen(), moves: [u], depth: 7, time: 500 });
+    S.busy = false; if (S.puzzle !== Z) return;
+    if (A && B && A.score - (-B.score) <= 30 && A.score - (-B.score) > -9999) { ok = true; alt = true; }
+  }
+  if (!ok) {
+    Z.wrong++; sBad();
+    const em = S.c.findMove(p.ok[0]);
+    if (Z.wrong === 1) { S.hintSq = em.f; Z.msg = { kind: 'no', text: `${S.c.san(m)} no aprovecha la idea. Pista: mirá ${PIECE_AT(em.p, em.f, 'tu')}.` }; }
+    else { S.arrows = [{ f: em.f, t: em.t, color: COL.hint }]; Z.msg = { kind: 'no', text: `La jugada es ${S.c.san(em)}.` }; }
+    renderBoard(); renderPanel(); return;
+  }
+  const san = S.c.san(m); pushMove(m); Z.done = true; S.hintSq = -1; S.arrows = [];
+  const exp = new Chess(p.fen), em = exp.findMove(p.ok[0]);
+  Z.msg = { kind: 'ok', text: (alt ? `${san} también sirve. La idea principal era ${exp.san(em)}: ` : '') + p.idea };
+  const rec = P.course[L.id] || (P.course[L.id] = {}); rec[Z.k] = Z.wrong ? 'h' : 1; saveP(); sGood(); checkAch(); render();
+}
+function coursePanel() {
+  const Z = S.puzzle, t = Z.t, L = t.lesson, m = Z.msg, last = Z.k >= t.puzzles.length - 1;
+  const bub = m.kind === 'ok' ? coachBubble('¡Bien!', 'best', [m.text]) : m.kind === 'no' ? coachBubble('Todavía no', 'mistake', [m.text]) : coachBubble(`Ejercicio ${Z.k + 1} de ${t.puzzles.length}`, null, [m.text]);
+  return head(L.name, 'course-back') + `<div class="pbody"><div class="theory">${L.theory}</div>${bub}</div><div class="pfoot">${Z.done ? (last ? '<button class="btn sm f1" data-act="course-back">Terminar lección</button>' : '<button class="btn sm f1 go2" data-act="nextpz-course">Siguiente ejercicio</button>') : '<button class="btn sm f1" data-act="pzhint">Pista</button><button class="btn sm f1" data-act="pzreset">Reiniciar</button>'}</div>`;
+}
+function courseListPanel() {
+  return head('Curso de medio juego', 'sub-back') + `<div class="pbody"><p class="lead">Lecciones cortas con ejercicios en el tablero. Si encontrás otra jugada igual de buena que la de la lección, también vale.</p>
+    <div class="cards">${COURSE.map(L => { const r = P.course[L.id] || {}, n = Object.keys(r).length; return `<button class="card" data-course="${L.id}"><div class="ci">${glyph(L.icon)}</div><div class="ct2"><b>${L.name}</b><span>${L.theory.split('. ')[0]}.</span><span class="tag">${n}/${L.tasks.length} ejercicios</span></div>${n >= L.tasks.length ? '<span class="done">✓</span>' : ''}</button>`; }).join('')}</div></div>`;
+}
+const _puzzleUserMove = puzzleUserMove;
+puzzleUserMove = function (m) {
+  const k = S.puzzle && S.puzzle.t.kind;
+  if (k === 'rush') return rushMove(m);
+  if (k === 'course') return courseMove(m);
+  return _puzzleUserMove(m);
+};
+const _ratePuzzle = ratePuzzle;
+ratePuzzle = function (Z, score) {
+  const was = Z.rated; _ratePuzzle(Z, score); if (was) return;
+  const k = Z.t.kind;
+  if (k === 'bank') bumpDay('puzzles');
+  if (k === 'review') { bumpDay('reviews'); if (Z.mastered) { P.mastered = (P.mastered || 0) + 1; saveP(); } }
+  checkAch();
+};
+
+// ---------- variantes en la revisión ----------
+function varPos() { const c = new Chess(S.fens[S.var.base]); for (let i = 0; i < S.var.idx; i++) { const m = c.findMove(S.var.line[i]); if (!m) break; c.make(m); } return c; }
+function openVar(ply, kind) {
+  const r = S.rec[ply]; if (!r) return;
+  const base = kind === 'punish' ? ply + 1 : ply, line = (kind === 'punish' ? r.refPv : r.bestPv) || [];
+  if (!line.length) return;
+  const c = new Chess(S.fens[base]), sans = [];
+  for (const u of line.slice(0, 10)) { const m = c.findMove(u); if (!m) break; sans.push(c.san(m)); c.make(m); }
+  stopAuto();
+  S.var = { base, line: line.slice(0, sans.length), sans, idx: 0, ply, kind, title: kind === 'punish' ? 'Cómo castigar el error' : 'La mejor línea' };
+  varArrows(); render();
+}
+function varArrows() { const V = S.var; S.arrows = []; if (V.idx < V.line.length) { const u = V.line[V.idx]; S.arrows = [{ f: sqIdx(u.slice(0, 2)), t: sqIdx(u.slice(2, 4)), color: COL.best }]; } }
+function varNav(a) {
+  const V = S.var; const n = V.line.length;
+  const prev = V.idx;
+  V.idx = a === 'first' ? 0 : a === 'prev' ? Math.max(0, V.idx - 1) : a === 'next' ? Math.min(n, V.idx + 1) : n;
+  if (V.idx > prev) { const c = new Chess(S.fens[V.base]); for (let i = 0; i < V.idx - 1; i++) c.make(c.findMove(V.line[i])); const m = c.findMove(V.line[V.idx - 1]); if (m) { sound(m, false); S.anim = { f: m.f, t: m.t }; } }
+  varArrows(); render();
+}
+function varPanel() {
+  const V = S.var, start = new Chess(S.fens[V.base]);
+  let num = start.full, white = start.turn === 'w', h = '';
+  V.sans.forEach((s, i) => { const lab = white ? `${num}.` : (i === 0 ? `${num}...` : ''); h += `<span class="vm${V.idx === i + 1 ? ' cur' : ''}" data-vi="${i + 1}">${lab ? `<small>${lab}</small>` : ''}${s}</span>`; if (!white) num++; white = !white; });
+  return head(V.title, 'var-close') + `<div class="pbody">
+    ${coachBubble(V.title, V.kind === 'punish' ? 'best' : 'best', [V.kind === 'punish' ? 'Así se aprovecha el error del rival. Avanzá jugada por jugada con las flechas o tocando el tablero.' : 'Esta es la línea que recomienda el motor desde esa posición. Avanzá jugada por jugada: la flecha verde muestra la próxima.'])}
+    <div class="vline">${h}</div>
+    <div class="tools" style="grid-template-columns:repeat(4,1fr)"><button data-nav="first"><span class="i">⏮</span>Inicio</button><button data-nav="prev"><span class="i">◀</span>Atrás</button><button data-nav="next"><span class="i">▶</span>Adelante</button><button data-nav="last"><span class="i">⏭</span>Final</button></div>
+  </div><div class="pfoot"><button class="btn sm f1" data-act="var-close">Volver a la partida</button></div>`;
+}
+
+// ---------- logros ----------
+const ACH = [
+  { id: 'g1', i: '♟', t: 'Primera partida', d: 'Jugá tu primera partida.', f: () => P.games.length >= 1 },
+  { id: 'w1', i: '★', t: 'Primera victoria', d: 'Ganale a cualquier bot.', f: () => P.games.some(g => g.res === 'W') },
+  { id: 'w1000', i: '♞', t: 'Vencedor de Faustino', d: 'Ganale a un rival de 1000 o más.', f: () => P.games.some(g => g.res === 'W' && g.elo >= 1000) },
+  { id: 'w1200', i: '♝', t: 'Nivel 1200', d: 'Ganale a un rival de 1200 o más.', f: () => P.games.some(g => g.res === 'W' && g.elo >= 1200) },
+  { id: 'w1500', i: '♜', t: 'Nivel 1500', d: 'Ganale a un rival de 1500 o más.', f: () => P.games.some(g => g.res === 'W' && g.elo >= 1500) },
+  { id: 'w1800', i: '♛', t: 'Nivel 1800', d: 'Ganale a un rival de 1800 o más.', f: () => P.games.some(g => g.res === 'W' && g.elo >= 1800) },
+  { id: 'a80', i: '◎', t: 'Precisión 80', d: 'Jugá una partida con 80% de precisión o más.', f: () => P.games.some(g => g.acc >= 80 && g.n >= 20) },
+  { id: 'a90', i: '◉', t: 'Precisión 90', d: 'Jugá una partida con 90% de precisión o más.', f: () => P.games.some(g => g.acc >= 90 && g.n >= 20) },
+  { id: 'r1000', i: '↑', t: 'Rating 1000', d: 'Llegá a 1000 de rating en la app.', f: () => P.rating >= 1000 },
+  { id: 't1000', i: '⚡', t: 'Táctico 1000', d: 'Llegá a 1000 de rating táctico.', f: () => P.tacRating >= 1000 },
+  { id: 's3', i: '🔥', t: 'Racha de 3', d: 'Resolvé el problema del día 3 días seguidos.', f: () => Math.max(P.bestStreak || 0, curStreak()) >= 3 },
+  { id: 's7', i: '🔥', t: 'Racha de 7', d: 'Resolvé el problema del día 7 días seguidos.', f: () => Math.max(P.bestStreak || 0, curStreak()) >= 7 },
+  { id: 'p1', i: '✓', t: 'Plan cumplido', d: 'Completá el plan diario.', f: () => P.planDays >= 1 },
+  { id: 'p7', i: '✓', t: 'Una semana de plan', d: 'Completá el plan diario 7 días.', f: () => P.planDays >= 7 },
+  { id: 'm5', i: '↻', t: 'Aprender del error', d: 'Dominá 5 errores del repaso.', f: () => P.mastered >= 5 },
+  { id: 'pz25', i: '♞', t: '25 problemas', d: 'Resolvé 25 problemas tácticos.', f: () => Object.values(P.bank).filter(v => v === 1).length >= 25 },
+  { id: 'ru15', i: '⏱', t: 'Rápido de mente', d: 'Hacé 15 en la contrarreloj.', f: () => Math.max(0, ...Object.values(P.rushBest)) >= 15 },
+  { id: 'co20', i: '⌖', t: 'Mapa del tablero', d: 'Hacé 20 coordenadas en 30 segundos.', f: () => Math.max(0, ...Object.values(P.coordsBest)) >= 20 },
+  { id: 'op5', i: '📖', t: 'Teórico', d: 'Completá 5 aperturas.', f: () => Object.keys(P.openings).length >= 5 },
+  { id: 'eg', i: '♚', t: 'Maestro de finales', d: 'Completá todos los finales.', f: () => ENDGAMES.every(e => P.endgames[e.id]) },
+  { id: 'cu', i: '🎓', t: 'Curso completo', d: 'Hacé todos los ejercicios del curso de medio juego.', f: () => COURSE.every(L => Object.keys(P.course[L.id] || {}).length >= L.tasks.length) },
+  { id: 'imp', i: '⇪', t: 'Analista', d: 'Analizá una partida de chess.com.', f: () => P.ext.length >= 1 }
+];
+function checkAch() {
+  P.bestStreak = Math.max(P.bestStreak || 0, curStreak());
+  const nw = ACH.filter(a => !P.ach[a.id] && (() => { try { return a.f(); } catch (e) { return false; } })());
+  if (!nw.length) return;
+  for (const a of nw) P.ach[a.id] = Date.now();
+  saveP();
+  nw.forEach((a, i) => setTimeout(() => { toast(`🏆 Logro: ${a.t}`); vib([30, 50, 30]); tone(1046, 0.12, 'sine', 0.1); }, 600 + i * 1800));
+}
+function achBlock() {
+  const n = ACH.filter(a => P.ach[a.id]).length;
+  return `<div class="lbl">Logros · ${n}/${ACH.length}</div><div class="achs">${ACH.map(a => `<div class="ach${P.ach[a.id] ? ' on' : ''}" title="${a.d}"><i>${a.i}</i><b>${a.t}</b><span>${a.d}</span></div>`).join('')}</div>`;
+}
+
+// ---------- paneles (enganche general) ----------
+function panelHook() {
+  if (S.mode === 'coords') return coordsPanel();
+  if (S.mode === 'hang') return hangPanel();
+  if (S.mode === 'puzzle' && S.puzzle && S.puzzle.t.kind === 'rush' && S.rush && S.rush.active) return rushPanel();
+  if (S.mode === 'puzzle' && S.puzzle && S.puzzle.t.kind === 'course') return coursePanel();
+  if (S.mode === 'game' && S.var) return varPanel();
+  if (S.mode !== 'menu') return '';
+  if (S.screen === 'tactics') {
+    if (S.sub === 'rushStart') return rushStartPanel();
+    if (S.sub === 'rushEnd') return rushEndPanel();
+    if (S.sub === 'coordsStart') return coordsStartPanel();
+    if (S.sub === 'course') return courseListPanel();
+  }
+  if (S.screen === 'progress' && S.sub === 'report') return reportPanel();
+  return '';
+}
+const _tacticsMenu = tacticsMenu;
+tacticsMenu = function () {
+  let h = _tacticsMenu().replace('<h2>Medio juego</h2>', '<h2>Entrenar</h2>');
+  const extra = `${planCard()}
+    <div class="lbl">Ejercicios rápidos</div>
+    <div class="quick">
+      <button data-act="rush-open"><i>⏱</i><b>Contrarreloj</b><span>${Object.keys(P.rushBest).length ? 'Récord ' + Math.max(...Object.values(P.rushBest)) : 'Problemas contra el reloj'}</span></button>
+      <button data-act="coords-open"><i>⌖</i><b>Coordenadas</b><span>${Object.keys(P.coordsBest).length ? 'Récord ' + Math.max(...Object.values(P.coordsBest)) : '30 segundos'}</span></button>
+      <button data-act="hang-open"><i>!</i><b>¿Qué está colgado?</b><span>Encontrá piezas sin defensa</span></button>
+    </div>
+    <div class="lbl">Entrenamiento</div>`;
+  h = h.replace('<div class="pbody">', '<div class="pbody">' + extra);
+  h = h.replace('<div class="lbl">Temas tácticos</div>', `<button class="card" data-act="course-open"><div class="ci">🎓</div><div class="ct2"><b>Curso de medio juego</b><span>Atacar al rey, torres activas, peones pasados y defensa. Con ejercicios.</span><span class="tag">${COURSE.reduce((s, L) => s + Object.keys(P.course[L.id] || {}).length, 0)}/${COURSE.reduce((s, L) => s + L.tasks.length, 0)} ejercicios</span></div></button><div class="lbl">Temas tácticos</div>`);
+  return h;
+};
+const _openingsMenu = openingsMenu;
+openingsMenu = function () { return _openingsMenu().replace('<div class="pbody">', '<div class="pbody">' + repBlock()); };
+const _progressPanel = progressPanel;
+progressPanel = function () {
+  return _progressPanel().replace('<div class="pbody">', `<div class="pbody"><button class="card hl2" data-act="report"><div class="ci">⚑</div><div class="ct2"><b>Informe de tus puntos débiles</b><span>Dónde perdés puntos, tus errores más repetidos y cómo te va con cada apertura.</span></div></button>`).replace('<div class="lbl">Instalar en el celular</div>', achBlock() + '<div class="lbl">Instalar en el celular</div>');
+};
+const _playMenu = playMenu;
+playMenu = function () {
+  let h = _playMenu();
+  const a = P.adapt.elo;
+  h = h.replace('<div class="bots">', `<div class="bots"><button class="bot adapt${P.botIdx === -1 ? ' on' : ''}" data-bot="-1"><div class="av" style="background:#26a58c">S</div><div class="bt"><b>Sparring <span class="tag" style="margin:0 0 0 6px;background:#1f6f60;color:#fff">A tu medida</span></b><span>Sube o baja de nivel después de cada partida para que ganes más o menos la mitad.</span></div><div class="elo">${a}</div></button>`);
+  h = h.replace(/<span class="tag" style="margin:0 0 0 6px;background:#45753c;color:#fff">Recomendado<\/span>/, '');
+  h = h.replace(/(<button class="tog[^"]*" data-act="tsound">)/, `<button class="tog${P.vibrate ? ' on' : ''}" data-act="tvib"><span class="sw"></span><div><b>Vibración</b><span>Al mover, al recibir jaque y con poco tiempo. (En iPhone no está disponible.)</span></div></button>$1`);
+  return h;
+};
+const _resultPanel = resultPanel;
+resultPanel = function () {
+  const g = S.game; let h = _resultPanel();
+  const notes = [];
+  if (g.adaptMsg) notes.push(g.adaptMsg);
+  if (g.repNote) notes.push(g.repNote.text);
+  if (notes.length) h = h.replace('<div class="acc">', notes.map(t => `<div class="tipbox">${t}</div>`).join('') + '<div class="acc">');
+  return h;
+};
+const _toMenu = toMenu;
+toMenu = function () { stopDrills(); S.var = null; if (S.rush) S.rush.active = false; _toMenu(); };
+const _renderBoard = renderBoard;
+renderBoard = function () { _renderBoard(); if (S.mode === 'coords') coordsDecorate(); else if (S.mode === 'hang') hangDecorate(); };
+function drillTap(e) { if (S.mode === 'coords') coordsTap(e); else if (S.mode === 'hang') hangTap(e); }
+
+// ---------- acciones ----------
+document.addEventListener('click', e => {
+  const r = e.target.closest('[data-rush]'); if (r) { startRush(+r.dataset.rush); return; }
+  const co = e.target.closest('[data-coords]'); if (co) { startCoords(co.dataset.coords); return; }
+  const cr = e.target.closest('[data-course]'); if (cr) { const r2 = P.course[cr.dataset.course] || {}; const L = COURSE.find(x => x.id === cr.dataset.course); const k = L.tasks.findIndex((_, i) => !r2[i]); startCourse(cr.dataset.course, k < 0 ? 0 : k); return; }
+  const rf = e.target.closest('[data-rfail]'); if (rf) { const p = S.rush.fails[+rf.dataset.rfail]; S.mode = 'puzzle'; S.puzzle = { t: { id: 'bank', kind: 'bank', name: 'Problemas', puzzles: [p] }, k: 0 }; loadPuzzle(); return; }
+  const vi = e.target.closest('[data-vi]'); if (vi && S.var) { const t = +vi.dataset.vi; while (S.var.idx < t) varNav('next'); if (S.var.idx > t) { S.var.idx = t; varArrows(); render(); } return; }
+}, true);
+const _handleExtraAct = handleExtraAct;
+handleExtraAct = function (act, el, e) {
+  switch (act) {
+    case 'rush-open': stopDrills(); toMenu(); S.screen = 'tactics'; S.sub = 'rushStart'; render(); return true;
+    case 'coords-open': stopDrills(); toMenu(); S.screen = 'tactics'; S.sub = 'coordsStart'; render(); return true;
+    case 'hang-open': case 'hang-start': startHang(); return true;
+    case 'hang-next': { const H = S.hg; H.i++; if (H.i >= H.list.length) { H.done = true; const rec = H.perfect > (P.hangBest || 0); if (rec) { P.hangBest = H.perfect; H.record = true; } saveP(); bumpDay('drills'); renderPanel(); } else loadHang(); return true; }
+    case 'hang-reveal': { const H = S.hg, p = H.list[H.i]; H.found = p.sq.slice(); H.wrong++; H.wrongTotal++; H.solved = true; renderBoard(); renderPanel(); return true; }
+    case 'drill-quit': if (S.mode === 'coords' && S.co) S.co.active = false; if (S.rush) S.rush.active = false; stopDrills(); toMenu(); S.screen = 'tactics'; render(); return true;
+    case 'sub-back': S.sub = null; if (S.mode !== 'menu') toMenu(); render(); return true;
+    case 'course-open': stopDrills(); toMenu(); S.screen = 'tactics'; S.sub = 'course'; render(); return true;
+    case 'course-back': toMenu(); S.screen = 'tactics'; S.sub = 'course'; render(); return true;
+    case 'nextpz-course': { const Z = S.puzzle; startCourse(Z.t.lesson.id, Z.k + 1); return true; }
+    case 'plan-game': S.screen = 'play'; P.botIdx = -1; saveP(); toMenu(); return true;
+    case 'go-openings': go('openings'); return true;
+    case 'report': S.screen = 'progress'; S.sub = 'report'; render(); window.scrollTo({ top: 0 }); return true;
+    case 'rep-drill': startRepDrill(); return true;
+    case 'tvib': P.vibrate = !P.vibrate; saveP(); renderPanel(); vib(30); return true;
+    case 'var': openVar(+el.dataset.ply, el.dataset.k); return true;
+    case 'var-close': { const ply = S.var ? S.var.ply : S.view - 1; S.var = null; S.arrows = []; S.view = ply + 1; render(); return true; }
+  }
+  if (act && act.startsWith('theme:')) { const t = TACTICS.find(x => x.id === act.slice(6)); if (t) { S.screen = 'tactics'; startTheme(t, 0); } return true; }
+  if (act === 'lhint' && S.lesson) S.lesson.hinted = true;
+  return _handleExtraAct(act, el, e);
+};
+document.addEventListener('keydown', e => {
+  if (!S.var) return;
+  if (e.key === 'ArrowLeft') { varNav('prev'); e.stopImmediatePropagation(); }
+  else if (e.key === 'ArrowRight') { varNav('next'); e.stopImmediatePropagation(); }
+}, true);
+
+ensureDay();
 applyBoardTheme();
 toMenu();
+setTimeout(checkAch, 1500);
 
 </script>
 
