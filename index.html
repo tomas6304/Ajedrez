@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -25,7 +25,9 @@
   --pc:"Segoe UI Symbol","Noto Sans Symbols 2","Noto Sans Symbols","DejaVu Sans","Apple Symbols","Arial Unicode MS",sans-serif;
   color-scheme:dark;
 }
-html,body{height:100%}
+html,body{height:100%;touch-action:manipulation;-webkit-text-size-adjust:100%;overscroll-behavior-y:none}
+button,.sq,.board,.tools,.navbtns,.seg,.card{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.seg.spd button{height:32px;font-size:13px}
 body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;-webkit-tap-highlight-color:transparent}
 *{box-sizing:border-box}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
@@ -1488,7 +1490,28 @@ function ask(q) {
   });
 }
 const AN = { depth: 6, time: IS_MOBILE ? 550 : 750 };
-const DEEP = { depth: 9, time: IS_MOBILE ? 650 : 900 };
+const DEEP = { depth: 9, time: IS_MOBILE ? 600 : 800 };
+// motores extra en paralelo para el análisis final (usa varios núcleos del celular o la compu)
+const POOL_N = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 2) - 1));
+const pool = [];
+function makeWorker() {
+  try {
+    const src = document.getElementById('engine-src').textContent + '\nonmessage=e=>{let r=null;try{r=handleReq(e.data)}catch(err){r=null}postMessage({id:e.data.id,r})};';
+    const w = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+    const W = { w, pend: {}, busy: 0, dead: false };
+    w.onmessage = e => { const f = W.pend[e.data.id]; delete W.pend[e.data.id]; W.busy--; f && f.res(e.data.r); };
+    w.onerror = () => { W.dead = true; for (const id in W.pend) { runLocal(W.pend[id].q, W.pend[id].res); } W.pend = {}; };
+    return W;
+  } catch (e) { return null; }
+}
+function askPool(q) {
+  if (!worker) return ask(q);
+  while (pool.length < POOL_N) { const W = makeWorker(); if (!W) break; pool.push(W); }
+  const live = pool.filter(W => !W.dead);
+  if (!live.length) return ask(q);
+  const W = live.reduce((a, b) => (b.busy < a.busy ? b : a));
+  return new Promise(res => { const id = ++reqId; W.pend[id] = { res, q }; W.busy++; W.w.postMessage(Object.assign({}, q, { id })); });
+}
 
 // ---------- estado ----------
 const S = {
@@ -1683,6 +1706,10 @@ board.addEventListener('pointerdown', e => {
   const s = +el.dataset.sq;
   if (e.button === 2) { S.rc = s; e.preventDefault(); return; }
   if (S.uarrows.length || S.marks.length) { S.uarrows = []; S.marks = []; renderBoard(); }
+  if (S.mode === 'game' && S.game && S.game.over && S.moves.length) {
+    const r = board.getBoundingClientRect(), right = e.clientX - r.left > r.width / 2;
+    stopAuto(); S.view = right ? Math.min(S.moves.length, S.view + 1) : Math.max(0, S.view - 1); S.arrows = []; render(); return;
+  }
   if (!canMove()) { if (S.view !== S.moves.length && ['game', 'opening', 'puzzle'].includes(S.mode)) { S.view = S.moves.length; S.arrows = []; render(); } return; }
   e.preventDefault();
   const p = S.c.b[s], mine = p && isW(p) === (S.c.turn === 'w');
@@ -1940,13 +1967,20 @@ async function finishGame(st) {
   const n = S.moves.length, deep = {};
   g.progress = { done: 0, total: n - g.startPly + 1 };
   renderPanel();
-  for (let k = g.startPly; k <= n; k++) {
-    let r = await ask({ mode: 'think', fen: S.start, moves: S.moves.slice(0, k), depth: DEEP.depth, time: DEEP.time });
-    if (S.game !== g || !g.over) return;
-    if (!r) r = await analysis(k);
-    deep[k] = r; g.progress.done++;
-    if (!g.review) renderPanel();
-  }
+  const todo = []; for (let k = g.startPly; k <= n; k++) todo.push(k);
+  let next = 0, aborted = false;
+  const lane = async () => {
+    while (next < todo.length && !aborted) {
+      const k = todo[next++];
+      let r = await askPool({ mode: 'think', fen: S.start, moves: S.moves.slice(0, k), depth: DEEP.depth, time: DEEP.time });
+      if (S.game !== g || !g.over) { aborted = true; return; }
+      if (!r) r = await analysis(k);
+      deep[k] = r; g.progress.done++;
+      if (!g.review) renderPanel();
+    }
+  };
+  await Promise.all(Array.from({ length: Math.max(1, POOL_N) }, lane));
+  if (aborted || S.game !== g || !g.over) return;
   for (let i = g.startPly; i < n; i++) {
     const A = deep[i], B = deep[i + 1]; if (!A || !B) continue;
     const book = !g.end && i < 20 && isBookLine(S.moves.slice(0, i + 1));
@@ -2226,7 +2260,7 @@ function stopAuto() { if (autoT) { clearInterval(autoT); autoT = null; } }
 function toggleAuto() {
   if (autoT) { stopAuto(); renderPanel(); return; }
   if (S.view >= S.moves.length) S.view = S.game.startPly;
-  autoT = setInterval(() => { if (!S.game || !S.game.review || S.view >= S.moves.length) { stopAuto(); renderPanel(); return; } S.view++; S.arrows = []; render(); }, 2600);
+  autoT = setInterval(() => { if (!S.game || !S.game.review || S.view >= S.moves.length) { stopAuto(); renderPanel(); return; } S.view++; S.arrows = []; render(); }, [2600, 1500, 800][P.revSpeed || 0]);
   S.view = Math.min(S.moves.length, S.view + 1); S.arrows = []; render();
 }
 function moveLabel(i) { const f = new Chess(S.fens[0]); const n = f.full + Math.floor((i + (f.turn === 'b' ? 1 : 0)) / 2); return new Chess(S.fens[i]).turn === 'w' ? `${n}.` : `${n}...`; }
@@ -2272,6 +2306,8 @@ function reviewPanel() {
       <button data-nav="next"><span class="i">▶</span>Adelante</button>
       <button data-nav="last"><span class="i">⏭</span>Final</button>
     </div>
+    <div class="seg spd">${['Lento', 'Normal', 'Rápido'].map((t, i) => `<button class="${(P.revSpeed || 0) === i ? 'on' : ''}" data-spd="${i}">${t}</button>`).join('')}</div>
+    <p class="muted" style="margin:0;font-size:12.5px">Tip: tocá la mitad derecha del tablero para avanzar y la izquierda para retroceder.</p>
     ${movesHTML()}
   </div><div class="pfoot"><button class="btn sm f1" data-act="review-end">Volver al resumen</button>${g.end ? '<button class="btn sm f1" data-act="restartEnd">Reintentar</button>' : g.imported ? '<button class="btn sm f1" data-act="menu">Salir</button>' : '<button class="btn sm f1" data-act="rematch">Revancha</button>'}</div>`;
 }
@@ -2413,6 +2449,7 @@ document.addEventListener('click', e => {
   const op = e.target.closest('[data-open]'); if (op) { startOpening(OPENINGS.find(o => o.id === op.dataset.open)); return; }
   const th = e.target.closest('[data-theme]'); if (th) { const t = TACTICS.find(x => x.id === th.dataset.theme); const s = P.tactics[t.id] || {}; const k = t.puzzles.findIndex((_, i) => !s[i]); startTheme(t, k < 0 ? 0 : k); return; }
   const en = e.target.closest('[data-end]'); if (en) { startEnd(ENDGAMES.find(x => x.id === en.dataset.end)); return; }
+  const sp = e.target.closest('[data-spd]'); if (sp) { P.revSpeed = +sp.dataset.spd; saveP(); if (autoT) { stopAuto(); toggleAuto(); } else renderPanel(); return; }
   const tcb = e.target.closest('[data-tc]'); if (tcb) { P.tc = tcb.dataset.tc; saveP(); renderPanel(); return; }
   const icb = e.target.closest('[data-impc]'); if (icb) { S.importText = ($('#pgn') || {}).value || S.importText; S.impColor = icb.dataset.impc; renderPanel(); return; }
   const hi = e.target.closest('[data-hist]'); if (hi) { const gg = P.games[+hi.dataset.hist]; if (gg && gg.mv) { const res = gg.res === 'D' ? '½-½' : (gg.res === 'W') === (gg.color === 'w') ? '1-0' : '0-1'; openReview({ start: gg.start || START_FEN, moves: gg.mv.split(' ').filter(Boolean), user: gg.color, opp: gg.bot, oppElo: gg.elo, result: res, reason: gg.reason, fromHistory: true }); } return; }
