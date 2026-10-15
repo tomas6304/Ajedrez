@@ -1,0 +1,7 @@
+CÓMO SUBIR LA APP A GITHUB PAGES
+1. Subí TODOS estos archivos a la carpeta principal de tu repositorio (reemplazando el index.html anterior):
+   index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png, apple-touch-icon.png
+2. Esperá 1 o 2 minutos y abrí tu página de GitHub.
+3. Para instalarla en el celular:
+   - Android (Chrome): menú ⋮ → "Instalar app" o "Agregar a pantalla principal".
+   - iPhone (Safari): botón Compartir → "Agregar a inicio".
